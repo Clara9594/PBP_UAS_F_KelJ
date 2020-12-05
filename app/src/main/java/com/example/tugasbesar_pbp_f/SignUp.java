@@ -1,6 +1,7 @@
 package com.example.tugasbesar_pbp_f;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -36,6 +37,7 @@ public class SignUp extends AppCompatActivity {
     private SharedPreferences preferences;
     private MaterialButton btn;
     private ImageButton back;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class SignUp extends AppCompatActivity {
         password = findViewById(R.id.passInput);
         country = findViewById(R.id.countryInput);
         phone = findViewById(R.id.phoneInput);
+        progressDialog = new ProgressDialog(this);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,10 +95,9 @@ public class SignUp extends AppCompatActivity {
                     Toast.makeText(SignUp.this, "Phone is invalid!", Toast.LENGTH_SHORT).show();
                 } else if (negara.isEmpty()) {
                     Toast.makeText(SignUp.this, "Please Enter Country!", Toast.LENGTH_SHORT).show();
-//               } else if (!(pass.isEmpty() && mail.isEmpty() && nama.isEmpty() && telp.isEmpty() && negara.isEmpty())) {
-//                   progressDialog.show();
-//                   requestLogin();
-//               }
+                } else if (!(pass.isEmpty() && mail.isEmpty() && nama.isEmpty() && telp.isEmpty() && negara.isEmpty())) {
+                   progressDialog.show();
+                   requestSignUp();
                 }
             }
         });
@@ -120,6 +122,11 @@ public class SignUp extends AppCompatActivity {
 //            }
 
     }
+
+    private void requestSignUp() {
+
+    }
+
 
 //    @Override
 //    public void onStart() {
