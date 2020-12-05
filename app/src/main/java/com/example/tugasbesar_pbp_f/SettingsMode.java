@@ -28,9 +28,9 @@ public class SettingsMode extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-             SharedPreferences.Editor editor = Login.statusLogin.edit();
-             editor.putBoolean("status_login",false);
-             editor.commit();
+//             SharedPreferences.Editor editor = Login.statusLogin.edit();
+//             editor.putBoolean("status_login",false);
+//             editor.commit();
              Intent back = new Intent(SettingsMode.this, MainActivity.class);
              startActivity(back);
              }

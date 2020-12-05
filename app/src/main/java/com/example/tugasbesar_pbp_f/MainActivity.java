@@ -148,6 +148,11 @@ public class MainActivity extends AppCompatActivity {
         redirectActivity(this,Profile.class);
     }
 
+    public void ClickBooking(View view){
+        //Redirect activity to Home
+        redirectActivity(this,MyBookingActivity.class);
+    }
+
     public void ClickSettings(View view){
         redirectActivity(this,SettingsMode.class);
     }
@@ -167,9 +172,9 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which) {
-                SharedPreferences.Editor editor =  Login.statusLogin.edit();
-                editor.putBoolean("status_login",false);
-                editor.commit();
+//                SharedPreferences.Editor editor =  Login.statusLogin.edit();
+//                editor.putBoolean("status_login",false);
+//                editor.commit();
                 activity.finishAffinity();
                 System.exit(0);
             }

@@ -126,6 +126,7 @@
     <!--    ini edit car admin-->
     <string name="btnEdit">Edit</string>
     <string name="cName">Car`s Name</string>
+    <string name="cPlatNomor">License Plate</string>
     <string name="cType">Car`s Type</string>
     <string name="passangers">Passengers</string>
     <string name="bag">Bags</string>
@@ -136,13 +137,13 @@
 
     <!--    ini buat detail booking-->
     <string name="jdlDetail">Detail Booking</string>
-    <string name="btnCancel">Cancel</string>
+    <string name="btnDelete">Delete</string>
     <string name="id">Id Booking</string>
     <string name="bName">Name</string>
     <string name="dBooking">Booking Date</string>
     <string name="tBooking">Booking Time</string>
 
-    
+
     <!--    ini buat detail car-->
     <string name="id_car">Details</string>
     <string name="cars_name">Car`s Name</string>
@@ -151,7 +152,7 @@
     <string name="priceInDetail">Price</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
-    
+
     <!--    ini buat menu admin-->
     <string name="headline1">Hi,Admin</string>
     <string name="subtitle1">Welcome Back!</string>

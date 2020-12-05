@@ -14,8 +14,6 @@
 
     <!--    Ini string buat Sign Up-->
     <string name="message">Please Enter your Identity!</string>
-    <string name="first">First Name*</string>
-    <string name="last">Last Name*</string>
     <string name="phone">Phone*</string>
     <string name="country">Country</string>
 
@@ -95,7 +93,7 @@
     <!--    Ini buat Profil-->
     <string name="judul">Profile</string>
     <string name="deskripsi">Please set your Profile!</string>
-    <string name="username">Username</string>
+    <string name="username">Name</string>
     <string name="no">Phone</string>
 
     <string name="NLMode">Dark Mode</string>

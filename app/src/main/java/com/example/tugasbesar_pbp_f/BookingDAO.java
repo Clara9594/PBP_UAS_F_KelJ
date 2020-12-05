@@ -39,7 +39,7 @@ public class BookingDAO {
     public String driver_Age;
 
     @SerializedName("total")
-    public String total;
+    public int total;
 
     @SerializedName("status")
     public String status;
@@ -47,7 +47,7 @@ public class BookingDAO {
     public BookingDAO(int id, int id_Pelanggan, String name, String pick_Up_Location,
                       String pick_Up_Date, String drop_Off_Date, String pick_Up_Time,
                       String drop_Off_Time, String car_Name, String plat_nomor, String driver_Age,
-                      String total, String status) {
+                      int total, String status) {
         this.id = id;
         this.id_Pelanggan = id_Pelanggan;
         this.name = name;
@@ -151,11 +151,11 @@ public class BookingDAO {
         this.driver_Age = driver_Age;
     }
 
-    public String getTotal() {
+    public int getTotal() {
         return total;
     }
 
-    public void setTotal(String total) {
+    public void setTotal(int total) {
         this.total = total;
     }
 

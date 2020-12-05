@@ -198,6 +198,7 @@ public class DateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
+
                 String a = pickDate.getText().toString();
                 String b = dropDate.getText().toString();
                 String c = pickTime.getText().toString();

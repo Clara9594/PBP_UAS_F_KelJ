@@ -138,17 +138,18 @@
                             android:textStyle="bold"
                             android:text="@string/dBooking"
                             android:textColor="@color/black"/>
+
                         <TextView
+                            android:id="@+id/twDate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/twDate"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
                             android:hint="@string/dBooking"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -189,6 +190,29 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/twCarName"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="-1dp"
+                            android:hint="@string/cName"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:text="@string/cPlatNomor"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/twCarPlat"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
@@ -262,7 +286,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="@color/buttonSignUp"
-                android:text="@string/btnCancel"
+                android:text="@string/btnDelete"
                 android:textColor="@color/white" />
 
             <com.google.android.material.button.MaterialButton

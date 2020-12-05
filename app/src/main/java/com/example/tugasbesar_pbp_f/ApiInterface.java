@@ -13,11 +13,24 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
 
-    @POST("login")
+    @GET("profile")
+    Call<UserResponse> getAllUser(@Query("data") String data);
+
+    @GET("profile/{id}")
+    Call<UserResponse> getUserById(@Path("id")String id,
+                                   @Query("data") String data);
     @FormUrlEncoded
-    Call<BookingResponse> login(@Field("nim") String nim,
-                             @Field("password") String password,
-                             @Query("data") String data);
+    @POST("login")
+    Call<UserResponse> login(@Field("email") String email,
+                             @Field("password") String password);
+
+    @FormUrlEncoded
+    @POST("register")
+    Call<UserResponse> register(@Field("name") String name,
+                                @Field("phone") String phone,
+                                @Field("email") String email,
+                                @Field("password") String password,
+                                @Field("country") String country);
 
     //Berbagai method buat BOOKING/////////////////////////////////////////
     @GET("booking")
@@ -25,37 +38,38 @@ public interface ApiInterface {
 
     @GET("booking/{id}")
     Call<BookingResponse> getBookingById(@Path("id") String id,
-                                      @Query("data") String data);
+                                         @Query("data") String data);
 
     @POST("booking")
     @FormUrlEncoded
     Call<BookingResponse> createBooking(@Field("id_Pelanggan") int id_Pelanggan,
-                                     @Field("name") String name,
-                                     @Field("pick_Up_Location") String pick_Up_Location,
-                                     @Field("pick_Up_Date") String pick_Up_Date,
-                                     @Field("drop_Off_Date") String drop_Off_Date,
-                                     @Field("pick_Up_Time") String pick_Up_Time,
-                                     @Field("drop_Off_Time") String drop_Off_Time,
-                                     @Field("car_Name") String car_Name,
-                                     @Field("plat_nomor") String plat_nomor,
-                                     @Field("driver_Age") String driver_Age,
-                                     @Field("total") int total,
-                                     @Field("status") String status);
+                                        @Field("name" ) String name,
+                                        @Field("pick_Up_Location") String pick_Up_Location,
+                                        @Field("pick_Up_Date") String pick_Up_Date,
+                                        @Field("drop_Off_Date") String drop_Off_Date,
+                                        @Field("pick_Up_Time") String pick_Up_Time,
+                                        @Field("drop_Off_Time") String drop_Off_Time,
+                                        @Field("car_Name") String car_Name,
+                                        @Field("plat_nomor") String plat_nomor,
+                                        @Field("driver_Age") String driver_Age,
+                                        @Field("total") int total,
+                                        @Field("status") String status);
 
     @PUT("booking/{id}")
     @FormUrlEncoded
     Call<BookingResponse> updateBooking(@Path("id") String id,
-                                     @Field("pick_Up_Location") String pick_Up_Location,
-                                     @Field("pick_Up_Date") String pick_Up_Date,
-                                     @Field("drop_Off_Date") String drop_Off_Date,
-                                     @Field("pick_Up_Time") String pick_Up_Time,
-                                     @Field("drop_Off_Time") String drop_Off_Time,
-                                     @Field("car_Name") String car_Name,
-                                     @Field("plat_nomor") String plat_nomor,
-                                     @Field("driver_Age") String driver_Age,
-                                     @Field("total") int total);
+                                        @Field("pick_Up_Location") String pick_Up_Location,
+                                        @Field("pick_Up_Date") String pick_Up_Date,
+                                        @Field("drop_Off_Date") String drop_Off_Date,
+                                        @Field("pick_Up_Time") String pick_Up_Time,
+                                        @Field("drop_Off_Time") String drop_Off_Time,
+                                        @Field("car_Name") String car_Name,
+                                        @Field("plat_nomor") String plat_nomor,
+                                        @Field("driver_Age") String driver_Age,
+                                        @Field("total") int total);
 
     @DELETE("booking/{id}")
     Call<BookingResponse> deleteBooking(@Path("id") String id);
 
 }
+

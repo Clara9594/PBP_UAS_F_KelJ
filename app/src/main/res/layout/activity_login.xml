@@ -138,12 +138,13 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/edit_text_radius"
-        app:backgroundTint="@color/buttonSignUp"
         android:fontFamily="@font/mregular"
         android:text="@string/signUp"
         android:textColor="#ffffff"
         android:textSize="17dp"
+        app:backgroundTint="@color/buttonSignUp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 

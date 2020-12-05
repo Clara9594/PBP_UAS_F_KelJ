@@ -12,15 +12,15 @@ public class SplashActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Login.statusLogin = getSharedPreferences("status",0);
-        Boolean booleanValue = Login.statusLogin.getBoolean("status_login",true);
+//        Login.statusLogin = getSharedPreferences("status",0);
+//        Boolean booleanValue = Login.statusLogin.getBoolean("status_login",true);
 
-        if(booleanValue)
-        {
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
-        }
+//        if(booleanValue)
+//        {
+//            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//        }
 
-        else {
+//        else {
             setContentView(R.layout.activity_splash);
             Thread thread = new Thread() {
                 public void run() {
@@ -36,4 +36,4 @@ public class SplashActivity extends Activity {
             thread.start();
         }
     }
-}
+//}

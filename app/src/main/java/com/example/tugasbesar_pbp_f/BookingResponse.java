@@ -22,7 +22,7 @@ public class BookingResponse {
         return message;
     }
 
-    public void setUsers(List<BookingDAO> bookings) {
+    public void setBookings(List<BookingDAO> bookings) {
         this.bookings = bookings;
     }
 

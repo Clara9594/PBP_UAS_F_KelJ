@@ -36,6 +36,7 @@
         <activity android:name=".PickCar" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MapsActivity" />
+        <activity android:name=".MyBookingActivity" />
 
         <service android:name=".MessagingService">
             <intent-filter>

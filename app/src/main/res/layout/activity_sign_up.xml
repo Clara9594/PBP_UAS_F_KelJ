@@ -8,6 +8,12 @@
     android:orientation="vertical"
     android:background="@color/background">
 
+    //      'name' => 'required|max:60',
+    //              'phone' => 'required|numeric|regex:/^(08)[0-9]{8,11}$/',
+    //              'email' => 'required|email:rfc,dns|unique:users',
+    //              'password' => 'required',
+    //              'country' => 'required|max:60'
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
         android:layout_width="match_parent"
@@ -81,63 +87,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/firstName"-->
-<!--        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"-->
-<!--        android:layout_width="167dp"-->
-<!--        android:layout_height="52dp"-->
-<!--        android:layout_marginStart="5dp"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:background="@drawable/edit_text_radius"-->
-<!--        android:fontFamily="@font/mregular"-->
-<!--        android:padding="10dp"-->
-<!--        android:textColorHint="@color/hintText"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.11"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/profil">-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_radius"
+        android:fontFamily="@font/mregular"
+        android:padding="10dp"
+        android:textColorHint="@color/hintText"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profil">
 
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:id="@+id/firstNameInput"-->
-<!--            android:layout_width="167dp"-->
-<!--            android:layout_height="54dp"-->
-<!--            android:layout_marginLeft="-10dp"-->
-<!--            android:layout_marginTop="-10dp"-->
-<!--            android:autofillHints=""-->
-<!--            android:backgroundTint="@android:color/white"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:hint="@string/first"-->
-<!--            android:textSize="15dp" />-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
-
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/lastName"-->
-<!--        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"-->
-<!--        android:layout_width="165dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginStart="212dp"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:background="@drawable/edit_text_radius"-->
-<!--        android:fontFamily="@font/mregular"-->
-<!--        android:padding="10dp"-->
-<!--        android:textColorHint="@color/hintText"-->
-<!--        app:layout_constraintStart_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/profil">-->
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:id="@+id/lastNameInput"-->
-<!--            android:layout_width="165dp"-->
-<!--            android:layout_height="52dp"-->
-<!--            android:layout_marginLeft="-10dp"-->
-<!--            android:layout_marginTop="-10dp"-->
-<!--            android:backgroundTint="@android:color/white"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="15dp"-->
-<!--            android:autofillHints=""-->
-<!--            android:hint="@string/last"-->
-<!--            android:padding="10dp" />-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
-
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameInput"
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="-10dp"
+            android:backgroundTint="@android:color/white"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:autofillHints=""
+            android:hint="@string/username"
+            android:padding="10dp"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/mail"
@@ -152,7 +130,7 @@
         android:textColorHint="@color/hintText"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profil">
+        app:layout_constraintTop_toBottomOf="@+id/name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/mailInput"
@@ -229,32 +207,32 @@
             android:inputType="number"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--    <com.google.android.material.textfield.TextInputLayout-->
-<!--        android:id="@+id/country"-->
-<!--        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"-->
-<!--        android:layout_width="350dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginStart="30dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:background="@drawable/edit_text_radius"-->
-<!--        android:fontFamily="@font/mregular"-->
-<!--        android:padding="10dp"-->
-<!--        android:textColorHint="@color/hintText"-->
-<!--        app:layout_constraintStart_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/phone">-->
-<!--        <com.google.android.material.textfield.TextInputEditText-->
-<!--            android:id="@+id/countryInput"-->
-<!--            android:layout_width="350dp"-->
-<!--            android:layout_height="52dp"-->
-<!--            android:layout_marginLeft="-10dp"-->
-<!--            android:layout_marginTop="-10dp"-->
-<!--            android:backgroundTint="@android:color/white"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="15dp"-->
-<!--            android:autofillHints=""-->
-<!--            android:hint="@string/country"/>-->
-<!--    </com.google.android.material.textfield.TextInputLayout>-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/country"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_radius"
+        android:fontFamily="@font/mregular"
+        android:padding="10dp"
+        android:textColorHint="@color/hintText"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/countryInput"
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="-10dp"
+            android:backgroundTint="@android:color/white"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:autofillHints=""
+            android:hint="@string/country"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"

@@ -27,14 +27,14 @@ public class Detail extends AppCompatActivity {
 
     private MaterialTextView a1,a2,a3;
     public Bundle mBundle,mBundle1;
-    private int harga, hari, jam;
+    private int harga=1500000, hari, jam;
     public long temp1, temp2;
     private MaterialButton btnPay;
     private ImageButton btnB;
-    private String name="blabla",plat_nomor, car_Name;
-            //,pick_Up_Location,pick_Up_Date,drop_Off_Date,pick_Up_Time;
+    private String name="blabla",plat_nomor="AB9999AB", car_Name="SIGRA";
+    //,pick_Up_Location,pick_Up_Date,drop_Off_Date,pick_Up_Time;
     //private String drop_Off_Time,total,status;
-    private int id_Pelanggan;
+    private int id_Pelanggan=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,7 +106,7 @@ public class Detail extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<BookingResponse> call, Throwable t) {
-                Toast.makeText(Detail.this, "Kesalahan Jaringan", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Detail.this, t.getMessage(), Toast.LENGTH_LONG).show();
                 //progressDialog.dismiss();
             }
         });
