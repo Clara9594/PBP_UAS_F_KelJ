@@ -29,6 +29,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Properties;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.http.Field;
+
 
 public class SignUp extends AppCompatActivity {
     FirebaseAuth mAuth;
@@ -95,54 +102,42 @@ public class SignUp extends AppCompatActivity {
                     Toast.makeText(SignUp.this, "Phone is invalid!", Toast.LENGTH_SHORT).show();
                 } else if (negara.isEmpty()) {
                     Toast.makeText(SignUp.this, "Please Enter Country!", Toast.LENGTH_SHORT).show();
-                } else if (!(pass.isEmpty() && mail.isEmpty() && nama.isEmpty() && telp.isEmpty() && negara.isEmpty())) {
+                } else {
                    progressDialog.show();
                    requestSignUp();
                 }
             }
         });
-//                    mAuth.createUserWithEmailAndPassword(email.getText().toString(),
-//                            password.getText().toString())
-//                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<AuthResult> task) {
-//                                    if(task.isSuccessful()) {
-//                                        Toast.makeText(SignUp.this, "Sign Up Successfully!", Toast.LENGTH_SHORT).show();
-//                                        email.setText("");
-//                                        password.setText("");
-//                                        Intent signUp = new Intent(SignUp.this, Login.class);
-//                                        startActivity(signUp);
-//                                    }
-//                                    else {
-//                                        Toast.makeText(SignUp.this, "Authentication Failed!", Toast.LENGTH_SHORT).show();
-//                                    }
-//                                }
-//                            });
-//                }
-//            }
-
     }
 
     private void requestSignUp() {
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
 
+        Call<UserResponse> register = apiService.register(name.getText().toString(), phone.getText().toString(),
+                email.getText().toString(), password.getText().toString(),
+                country.getText().toString());
+
+        progressDialog.dismiss();
+        register.enqueue(new Callback<UserResponse>() {
+            @Override
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+
+                if(response.isSuccessful()){
+                    Toast.makeText(SignUp.this, response.body().getMessage(),Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignUp.this, Login.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    String messege = "An error occured! Please Try again!";
+                    Toast.makeText(SignUp.this, messege,Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+                Toast.makeText(SignUp.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+            }
+        });
     }
-
-
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//    }
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == 100) {
-//            //Get Capture Image
-//            Bitmap captureImage = (Bitmap) data.getExtras().get("data");
-//            //Set Capture Image to ImageView
-//            profil.setImageBitmap(captureImage);
-//        }
-//    }
 }

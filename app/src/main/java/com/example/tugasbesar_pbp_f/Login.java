@@ -18,6 +18,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Field;
 
 public class Login extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class Login extends AppCompatActivity {
     private static final String SHARED_PREF_NAME = "userLogin";
     private static final String KEY_ID = "id";
     private TextInputEditText edtEmail,edtPassword;
-//    private MaterialButton btnSignUp;
+    private MaterialButton btnSignUp;
     private MaterialButton btnLogin;
     private ProgressDialog progressDialog;
 
@@ -49,7 +50,7 @@ public class Login extends AppCompatActivity {
 //        mFirebaseAuth = FirebaseAuth.getInstance();
         edtEmail = findViewById(R.id.emailInput);
         edtPassword = findViewById(R.id.passwordInput);
-//        btnSignUp = findViewById(R.id.btnSignUp);
+        btnSignUp = findViewById(R.id.btnSignUp);
         btnLogin = findViewById(R.id.btnLogin);
         progressDialog = new ProgressDialog(this);
 
@@ -67,6 +68,15 @@ public class Login extends AppCompatActivity {
                 finish();
             }
         }
+
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent regis = new Intent(Login.this, SignUp.class);
+                startActivity(regis);
+                finish();
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +99,9 @@ public class Login extends AppCompatActivity {
         });
     }
 
+//    @Field("email") String email,
+//    @Field("password") String password);
+
     private void requestLogin() {
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
         Call<UserResponse> log = apiService.login(edtEmail.getText().toString(), edtPassword.getText().toString());
@@ -99,7 +112,7 @@ public class Login extends AppCompatActivity {
                 if(response.body()!=null){
                     Toast.makeText(Login.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
-                        if (response.body().getUsers().getStatus().equals("admin")){
+                        if (response.body().getMessage().equals("admin")){
                             Intent i = new Intent(Login.this, AdminActivity.class);
                             startActivity(i);
                             finish();

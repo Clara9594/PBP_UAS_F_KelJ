@@ -14,9 +14,9 @@ public class UserResponse {
     @Expose
     private String message;
 
-    @SerializedName("status")
-    @Expose
-    private String status;
+//    @SerializedName("status")
+//    @Expose
+//    private String status;
 
     public UserDAO getUsers(){
         return users;
@@ -34,7 +34,7 @@ public class UserResponse {
         this.message = message;
     }
 
-    public void getStatus(String status) {
-        this.status = status;
-    }
+//    public void getStatus(String status) {
+//        this.status = status;
+//    }
 }

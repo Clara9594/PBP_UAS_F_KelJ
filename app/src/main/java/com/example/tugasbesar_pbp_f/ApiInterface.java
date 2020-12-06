@@ -20,12 +20,12 @@ public interface ApiInterface {
     Call<UserResponse> getUserById(@Path("id")String id,
                                    @Query("data") String data);
     @FormUrlEncoded
-    @POST("login")
+    @POST("/public/api/login")
     Call<UserResponse> login(@Field("email") String email,
                              @Field("password") String password);
 
     @FormUrlEncoded
-    @POST("register")
+    @POST("/public/api/register")
     Call<UserResponse> register(@Field("name") String name,
                                 @Field("phone") String phone,
                                 @Field("email") String email,

@@ -1,120 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.tubes_j.RecyclerViewAdapter">
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/itemcard"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="8dp"
+
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:clickable="true"
+    android:checkable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:clickable="true"
-        android:checkable="true"
-        android:focusable="true">
+        android:layout_height="150dp"
+        android:id="@+id/constlayout">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/twBookingDate1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="210dp"
+            android:fontFamily="@font/mbold"
+            android:maxLines="1"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/twPickupTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:maxLines="3"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/twBookingDate1"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/twBookingDate1"
+            app:layout_constraintTop_toBottomOf="@+id/twBookingDate1"
+            tools:ignore="SmallSp" />
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/twDropOffTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:maxLines="3"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/twPickupTime"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/twPickupTime"
+            app:layout_constraintTop_toBottomOf="@+id/twPickupTime"
+            tools:ignore="SmallSp" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/twBookingDate1"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="210dp"
-                android:fontFamily="@font/mbold"
-                android:maxLines="1"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/twBookingDate2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/mbold"
+            android:maxLines="1"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/twDropOffTime"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/twDropOffTime"
+            app:layout_constraintTop_toBottomOf="@+id/twDropOffTime"
+            tools:ignore="SmallSp" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/twPickupTime"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:maxLines="3"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/twBookingDate1"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/twBookingDate1"
-                app:layout_constraintTop_toBottomOf="@+id/twBookingDate1"
-                tools:ignore="SmallSp" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/twCarName"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="200dp"
+            android:fontFamily="@font/mbold"
+            android:maxLines="1"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/twBookingDate1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SmallSp" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/twDropOffTime"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:maxLines="3"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/twPickupTime"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/twPickupTime"
-                app:layout_constraintTop_toBottomOf="@+id/twPickupTime"
-                tools:ignore="SmallSp" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/twTotalPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:maxLines="3"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/twCarName"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/twCarName"
+            app:layout_constraintTop_toBottomOf="@+id/twCarName"
+            tools:ignore="SmallSp" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/twBookingDate2"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:fontFamily="@font/mbold"
-                android:maxLines="1"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="@+id/twDropOffTime"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/twDropOffTime"
-                app:layout_constraintTop_toBottomOf="@+id/twDropOffTime"
-                tools:ignore="SmallSp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDetail"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/details"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/buttonSignUp"
+            app:layout_constraintEnd_toEndOf="@+id/twTotalPrice"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/twTotalPrice"
+            app:layout_constraintTop_toBottomOf="@+id/twTotalPrice"/>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/twCarName"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="200dp"
-                android:fontFamily="@font/mbold"
-                android:maxLines="1"
-                android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="@+id/twBookingDate1"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="SmallSp" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/twTotalPrice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:maxLines="3"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="@+id/twCarName"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/twCarName"
-                app:layout_constraintTop_toBottomOf="@+id/twCarName"
-                tools:ignore="SmallSp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnDetail"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/details"
-                android:textColor="@color/black"
-                android:layout_alignParentLeft="true"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/buttonSignUp"
-                app:layout_constraintEnd_toEndOf="@+id/twTotalPrice"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/twTotalPrice"
-                app:layout_constraintTop_toBottomOf="@+id/twTotalPrice"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-</layout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
