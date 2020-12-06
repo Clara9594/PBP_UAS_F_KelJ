@@ -83,8 +83,6 @@ public class DetailBooking extends DialogFragment {
                     }
                 });
                 builder.show();
-
-
             }
         });
 
@@ -174,7 +172,7 @@ public class DetailBooking extends DialogFragment {
             @Override
             public void onFailure(Call<BookingResponse> call, Throwable t) {
                 dismiss();
-                Toast.makeText(getContext(), "Masalah Koneksi jaringan", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

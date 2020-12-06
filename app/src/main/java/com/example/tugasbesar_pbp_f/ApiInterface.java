@@ -40,6 +40,10 @@ public interface ApiInterface {
     Call<BookingResponse> getBookingById(@Path("id") String id,
                                          @Query("data") String data);
 
+//    @GET("carByPlat/{plat_nomor}")
+//    Call<CarResponse> getCarByPlat(@Path("plat_nomor") String plat_nomor,
+//                                         @Query("data") String data);
+
     @POST("booking")
     @FormUrlEncoded
     Call<BookingResponse> createBooking(@Field("id_Pelanggan") int id_Pelanggan,
@@ -58,13 +62,13 @@ public interface ApiInterface {
     @PUT("booking/{id}")
     @FormUrlEncoded
     Call<BookingResponse> updateBooking(@Path("id") String id,
-                                        @Field("pick_Up_Location") String pick_Up_Location,
+                                        //@Field("pick_Up_Location") String pick_Up_Location,
                                         @Field("pick_Up_Date") String pick_Up_Date,
                                         @Field("drop_Off_Date") String drop_Off_Date,
                                         @Field("pick_Up_Time") String pick_Up_Time,
                                         @Field("drop_Off_Time") String drop_Off_Time,
-                                        @Field("car_Name") String car_Name,
-                                        @Field("plat_nomor") String plat_nomor,
+                                       // @Field("car_Name") String car_Name,
+                                       // @Field("plat_nomor") String plat_nomor,
                                         @Field("driver_Age") String driver_Age,
                                         @Field("total") int total);
 

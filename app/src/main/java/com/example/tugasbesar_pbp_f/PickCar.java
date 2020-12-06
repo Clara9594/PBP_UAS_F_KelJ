@@ -30,7 +30,7 @@ public class PickCar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        ListCar = new CarList().CAR;
+        ListCar = new CarList().CAR;
         adapter = new RecyclerViewAdapter(PickCar.this, ListCar);
 //        mBundle = getIntent().getBundleExtra("durasi");
 //        temp1 = mBundle.getLong("hari");
