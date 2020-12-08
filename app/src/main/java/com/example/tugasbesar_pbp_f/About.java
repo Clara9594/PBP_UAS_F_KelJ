@@ -48,9 +48,9 @@ public class About extends AppCompatActivity {
         recreate();
     }
 
-    public void ClickSignOut(View view){
-        MainActivity.logout(this);
-    }
+//    public void ClickSignOut(View view){
+//        MainActivity.logout(this);
+//    }
 
     @Override
     protected void onPause() {

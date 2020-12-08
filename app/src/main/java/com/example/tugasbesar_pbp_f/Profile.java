@@ -150,9 +150,9 @@ public class Profile extends AppCompatActivity {
         MainActivity.redirectActivity(this, About.class);
     }
 
-    public void ClickSignOut(View view){
-        MainActivity.logout(this);
-    }
+//    public void ClickSignOut(View view){
+//        MainActivity.logout(this);
+//    }
 
     @Override
     protected void onPause() {

@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class AdminActivity extends AppCompatActivity {
-    private CardView cvAddUser, cvCarList;
+    private CardView cvAddUser, cvCarList,cvOrderList;
     SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_NAME = "userLogin";
     private static final String KEY_ID = "id";
@@ -21,6 +21,7 @@ public class AdminActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin);
         cvAddUser = findViewById(R.id.cvAddUser);
         cvCarList = findViewById(R.id.cvCarList);
+        cvOrderList = findViewById(R.id.cvOrderList);
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
 
@@ -39,6 +40,13 @@ public class AdminActivity extends AppCompatActivity {
             public void onClick(View view){
                 Intent i = new Intent(AdminActivity.this,ShowListCarAdmin.class);
                 startActivity(i);
+            }
+        });
+
+        cvOrderList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AdminActivity.this, ShowOrderListAdmin.class);
             }
         });
     }

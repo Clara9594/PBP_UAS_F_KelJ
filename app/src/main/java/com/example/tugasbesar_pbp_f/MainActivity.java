@@ -175,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
 //                SharedPreferences.Editor editor =  Login.statusLogin.edit();
 //                editor.putBoolean("status_login",false);
 //                editor.commit();
+
                 activity.finishAffinity();
                 System.exit(0);
             }

@@ -25,6 +25,7 @@ public class Login extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_NAME = "userLogin";
     private static final String KEY_ID = "id";
+    private static final String ROLE = "status";
     private TextInputEditText edtEmail,edtPassword;
     private MaterialButton btnSignUp;
     private MaterialButton btnLogin;
@@ -56,9 +57,11 @@ public class Login extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         String id = sharedPreferences.getString(KEY_ID, null);
+        String role = sharedPreferences.getString(ROLE,null);
 
         if (id != null) {
-            if (id.equals("0")) {
+            //Toast.makeText(this, "IKI WOI "+id, Toast.LENGTH_SHORT).show();
+            if (role.equals("admin")) {
                 Intent login = new Intent(Login.this, AdminActivity.class);
                 startActivity(login);
                 finish();
@@ -118,6 +121,7 @@ public class Login extends AppCompatActivity {
                             finish();
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString(KEY_ID, response.body().getUsers().getId());
+                            editor.putString(ROLE,response.body().getMessage());
                             editor.apply();
                         }else {
                             Intent i = new Intent(Login.this, MainActivity.class);
@@ -125,6 +129,7 @@ public class Login extends AppCompatActivity {
                             finish();
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString(KEY_ID, response.body().getUsers().getId());
+                            editor.putString(ROLE,response.body().getMessage());
                             editor.apply();
                         }
                     }

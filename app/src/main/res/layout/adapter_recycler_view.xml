@@ -6,15 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.tubes_j.RecyclerViewAdapter">
 
-    <data>
-        <variable
-            name="car"
-            type="com.example.tugasbesar_pbp_f.Car"/>
-        <variable
-            name="activity"
-            type="com.example.tugasbesar_pbp_f.RecyclerViewAdapter"/>
-    </data>
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/itemcard"
         android:layout_marginHorizontal="16dp"
@@ -36,7 +27,6 @@
                 android:layout_height="120dp"
                 android:layout_marginStart="240dp"
                 android:layout_marginBottom="19dp"
-                app:profileImage="@{car.imgURL}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -49,7 +39,6 @@
                 android:layout_marginEnd="210dp"
                 android:fontFamily="@font/mbold"
                 android:maxLines="1"
-                android:text="@{car.tipe}"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -63,7 +52,6 @@
                 android:layout_marginTop="0dp"
                 android:maxLines="3"
                 android:textSize="18sp"
-                android:text="@{car.merek}"
                 app:layout_constraintEnd_toEndOf="@+id/name_car"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/name_car"
@@ -76,7 +64,6 @@
                 android:layout_height="22dp"
                 android:layout_marginTop="4dp"
                 android:maxLines="3"
-                android:text="@{String.valueOf(car.penumpang)}"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/brand_car"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -102,7 +89,6 @@
                 android:layout_marginTop="8dp"
                 android:maxLines="3"
                 android:textSize="18sp"
-                android:text="@{String.valueOf(car.tas)}"
                 app:layout_constraintEnd_toEndOf="@+id/passenger"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/passenger"
@@ -126,12 +112,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:maxLines="3"
-                android:text="@{car.bensin}"
+
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/bag"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/bag"
                 app:layout_constraintTop_toBottomOf="@+id/bag"
+                tools:ignore="SmallSp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/platNomor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:maxLines="3"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/fuel"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/fuel"
+                app:layout_constraintTop_toBottomOf="@+id/fuel"
                 tools:ignore="SmallSp" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -141,7 +140,7 @@
                 android:layout_marginTop="8dp"
                 android:maxLines="3"
                 android:textSize="23sp"
-                android:text="@{String.valueOf(car.harga)}"
+
                 app:layout_constraintEnd_toEndOf="@+id/image_car"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/image_car"

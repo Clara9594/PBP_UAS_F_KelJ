@@ -31,7 +31,8 @@ import retrofit2.Response;
 public class EditPesanan extends AppCompatActivity {
     private ImageButton ibBack;
     private EditText etPickDate, etDropDate, etPickTime, etDropTime;
-    private String sPickDate, sDropDate, sPickTime, sDropTime, sDriverAge,sPlatNomor;
+    private MaterialTextView etAlamat;
+    private String sPickDate, sDropDate, sPickTime, sDropTime, sDriverAge,sPlatNomor,sAlamat;
     private MaterialButton mb2, mb3, mb4,btnEdit;
     private Bundle mBundle;
     private int sIdBooking;
@@ -40,12 +41,16 @@ public class EditPesanan extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
     private SimpleDateFormat dateFormatter;
     public Date satu,dua;
-    public int Total;
+    public int Total,sHarga;
+    private long elapsedDays,elapsedHours,elapsedMinutes,elapsedSeconds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_pesanan);
+        mBundle = getIntent().getBundleExtra("dataEdit");
+        sIdBooking = mBundle.getInt("ID");
+        loadBookingById(sIdBooking);
 
         dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
         ibBack = findViewById(R.id.back);
@@ -60,14 +65,12 @@ public class EditPesanan extends AppCompatActivity {
         etDropDate = findViewById(R.id.dropDateInput);
         etPickTime = findViewById(R.id.pickTimesInput);
         etDropTime = findViewById(R.id.dropTimesInput);
+        driverAgeText = findViewById(R.id.text);
+        etAlamat    = findViewById(R.id.materialTextView2);
         mb2 = findViewById(R.id.materialButton2);
         mb3 = findViewById(R.id.materialButton3);
         mb4 = findViewById(R.id.materialButton4);
         btnEdit = findViewById(R.id.btnEdit);
-
-        mBundle = getIntent().getBundleExtra("dataEdit");
-        sIdBooking = mBundle.getInt("ID");
-        loadBookingById(sIdBooking);
 
         etPickDate.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -182,7 +185,77 @@ public class EditPesanan extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 driverAgeText.setText("40+");
+            }
+        });
 
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
+
+                String a = etPickDate.getText().toString();
+                String b = etDropDate.getText().toString();
+                String c = etPickTime.getText().toString();
+                String d = etDropTime.getText().toString();
+                String date1 = a + " " + c;
+                String date2 = b + " " + d;
+
+                try {
+                    satu = simpleDateFormat.parse(date1);
+                    dua = simpleDateFormat.parse(date2);
+                    long diff = dua.getTime() - satu.getTime();
+
+                    //hasil.setText(String.valueOf(diff));
+
+                    long secondsInMilli = 1000;
+                    long minutesInMilli = secondsInMilli * 60;
+                    long hoursInMilli = minutesInMilli * 60;
+                    long daysInMilli = hoursInMilli * 24;
+
+                    elapsedDays = diff / daysInMilli;
+                    diff = diff % daysInMilli;
+
+                    elapsedHours = diff / hoursInMilli;
+                    diff = diff % hoursInMilli;
+
+                    elapsedMinutes = diff / minutesInMilli;
+                    diff = diff % minutesInMilli;
+
+                    elapsedSeconds = diff / secondsInMilli;
+
+                    //hasil2.setText(String.valueOf(elapsedDays)  + " days " + String.valueOf(elapsedHours) +" hours " + String.valueOf(elapsedMinutes) + " minutes");
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+
+                if(etPickDate.getText().toString().isEmpty() || etDropDate.getText().toString().isEmpty()
+                        || etPickTime.getText().toString().isEmpty() || etDropTime.getText().toString().isEmpty()
+                        || driverAgeText.getText().toString().isEmpty()) {
+                    Toast.makeText(EditPesanan.this, "Fill the Empty Fields", Toast.LENGTH_SHORT).show();
+                } else if (dua.getTime() < satu.getTime()) {
+                    Toast.makeText(EditPesanan.this, "Drop-out Date Greater than Pick-up Date", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    int hari = (int) elapsedDays;
+                    int jam = (int) elapsedHours;
+                    if(hari==0 && jam!=0) {
+                        //a2.setText("Rp. "+String.valueOf(harga));
+                        Toast.makeText(EditPesanan.this, "Harga Tidak Berubah", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(hari!=0 && jam!=0){
+
+                        Total = sHarga * (hari+1);
+                        //a2.setText("Rp. "+String.valueOf(harga));
+                    }
+
+                    else if(hari!=0 && jam==0)
+                    {
+                        Total = sHarga * hari;
+                        //a2.setText("Rp. "+String.valueOf(harga));
+                    }
+                    saveBooking();
+                }
             }
         });
     }
@@ -194,7 +267,7 @@ public class EditPesanan extends AppCompatActivity {
         add.enqueue(new Callback<BookingResponse>() {
             @Override
             public void onResponse(Call<BookingResponse> call, Response<BookingResponse> response) {
-                Toast.makeText(EditPesanan.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(EditPesanan.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 //progressDialog.dismiss();
                 Intent i= new Intent(EditPesanan.this,MainActivity.class);
                 startActivity(i);
@@ -224,13 +297,16 @@ public class EditPesanan extends AppCompatActivity {
                 sDropTime = response.body().getBookings().get(0).getDrop_Off_Time();
                 sDriverAge = response.body().getBookings().get(0).getDriver_Age();
                 sPlatNomor = response.body().getBookings().get(0).getPlat_nomor();
+                sAlamat     = response.body().getBookings().get(0).getPick_Up_Location();
 
                 etPickDate.setText(sPickDate);
                 etDropDate.setText(sDropDate);
                 etPickTime.setText(sPickTime);
                 etDropTime.setText(sDropTime);
                 driverAgeText.setText(sDriverAge);
+                etAlamat.setText(sAlamat);
 
+                loadCarByPlat(sPlatNomor);
                 //String date1 = sPickDate + " " + sPickTime;
                 //String date2 = sDropDate + " " + sDropTime;
                 //simpleDateFormat
@@ -239,28 +315,28 @@ public class EditPesanan extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<BookingResponse> call, Throwable t) {
-                Toast.makeText(EditPesanan.this, "Kesalahan Jaringan", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditPesanan.this, t.getMessage(), Toast.LENGTH_SHORT).show();
                 //progressDialog.dismiss();
             }
         });
     }
 
-//    private void loadCarByPlat(String plat){
-//
-//        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-//        Call<BookingResponse> add = apiService.getCarByPlat(plat,"data");
-//
-//        add.enqueue(new Callback<BookingResponse>() {
-//            @Override
-//            public void onResponse(Call<BookingResponse> call, Response<BookingResponse> response) {
-//                sPlatNomor = response.body().getBookings().get(0).getPick_Up_Date();
-//            }
-//
-//            @Override
-//            public void onFailure(Call<BookingResponse> call, Throwable t) {
-//                Toast.makeText(EditPesanan.this, "Kesalahan Jaringan", Toast.LENGTH_SHORT).show();
-//                //progressDialog.dismiss();
-//            }
-//        });
-//    }
+    private void loadCarByPlat(String plat){
+
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        Call<CarResponse> add = apiService.getCarByPlat(plat,"data");
+
+        add.enqueue(new Callback<CarResponse>() {
+            @Override
+            public void onResponse(Call<CarResponse> call, Response<CarResponse> response) {
+                sHarga = response.body().getCars().get(0).getHarga();
+            }
+
+            @Override
+            public void onFailure(Call<CarResponse> call, Throwable t) {
+                Toast.makeText(EditPesanan.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                //progressDialog.dismiss();
+            }
+        });
+    }
 }

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -27,11 +28,17 @@ public class MyBookingActivity extends AppCompatActivity {
     private List<BookingDAO> booking = new ArrayList<>();
     private SearchView searchView;
     private SwipeRefreshLayout swipeRefreshLayout;
+    SharedPreferences sharedPreferences;
+    private int id_Pelanggan;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_booking);
+
+        sharedPreferences = getSharedPreferences("userLogin", MODE_PRIVATE);
+        id_Pelanggan = Integer.parseInt(sharedPreferences.getString("id",null));
 
         btn = findViewById(R.id.bckDate);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -42,18 +49,19 @@ public class MyBookingActivity extends AppCompatActivity {
         });
         swipeRefreshLayout = findViewById(R.id.swipeRefresh);
         swipeRefreshLayout.setRefreshing(true);
-        loadBooking();
+        loadBooking(id_Pelanggan);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                loadBooking();
+                loadBooking(id_Pelanggan);
             }
         });
     }
 
-    public void loadBooking(){
+    public void loadBooking(int id){
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<BookingResponse> call = apiService.getAllBooking("data");
+        Call<BookingResponse> call = apiService.getBookingProcessByIdPelanggan(String.valueOf(id),"data");
+        //Call<BookingResponse> call = apiService.getAllBooking("data");
 
         call.enqueue(new Callback<BookingResponse>() {
             @Override

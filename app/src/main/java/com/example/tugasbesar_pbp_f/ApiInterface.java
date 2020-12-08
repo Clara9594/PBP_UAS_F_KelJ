@@ -1,13 +1,17 @@
 package com.example.tugasbesar_pbp_f;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -40,9 +44,9 @@ public interface ApiInterface {
     Call<BookingResponse> getBookingById(@Path("id") String id,
                                          @Query("data") String data);
 
-//    @GET("carByPlat/{plat_nomor}")
-//    Call<CarResponse> getCarByPlat(@Path("plat_nomor") String plat_nomor,
-//                                         @Query("data") String data);
+    @GET("bookingProcess/{id}")
+    Call<BookingResponse> getBookingProcessByIdPelanggan(@Path("id") String id,
+                                         @Query("data") String data);
 
     @POST("booking")
     @FormUrlEncoded
@@ -74,6 +78,33 @@ public interface ApiInterface {
 
     @DELETE("booking/{id}")
     Call<BookingResponse> deleteBooking(@Path("id") String id);
+
+    //////BERBAGAI METHOD CAR
+    @Multipart
+    @POST("car")
+    Call<CarResponse> createCar(@Part("tipe") RequestBody tipe,
+                                @Part("merek") RequestBody merek,
+                                @Part("penumpang") RequestBody penumpang,
+                                @Part("tas") RequestBody tas,
+                                @Part("bensin")RequestBody bensin,
+                                @Part("harga")RequestBody harga,
+                                @Part MultipartBody.Part imgURL,
+                                @Part("plat_nomor")RequestBody plat_nomor);
+
+    @GET("car")
+    Call<CarResponse> getAllCars(@Query("data") String data);
+
+    @GET("car/{id}")
+    Call<CarResponse> getCarById(@Path("id") String id,
+                                         @Query("data") String data);
+
+    @GET("carByPlat/{plat_nomor}")
+    Call<CarResponse> getCarByPlat(@Path("plat_nomor") String plat_nomor,
+                                   @Query("data") String data);
+
+    @DELETE("car/{id}")
+    Call<CarResponse> deleteCar(@Path("id") String id);
+
 
 }
 

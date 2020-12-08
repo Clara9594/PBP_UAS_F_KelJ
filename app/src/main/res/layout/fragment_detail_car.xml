@@ -141,6 +141,31 @@
                             android:layout_alignParentLeft="true"
                             android:textSize="20dp"
                             android:textStyle="bold"
+                            android:text="@string/cars_plate"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:id="@+id/twCarPlat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="-1dp"
+                            android:hint="@string/cars_plate"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
                             android:text="@string/passanger"
                             android:textColor="@color/black"/>
 
