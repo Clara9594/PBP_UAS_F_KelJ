@@ -17,12 +17,21 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
 
-    @GET("profile")
+    //API PROFILE
+    @GET("/public/api/profile")
     Call<UserResponse> getAllUser(@Query("data") String data);
 
-    @GET("profile/{id}")
+    @GET("/public/api/profile/{id}")
     Call<UserResponse> getUserById(@Path("id")String id,
                                    @Query("data") String data);
+
+    @FormUrlEncoded
+    @PUT("/public/api/profile/{id}")
+    Call<UserResponse> updateProfile(@Path("id") String id,
+                                     @Field("name") String name,
+                                     @Field("phone") String phone,
+                                     @Field("country") String country);
+    
     @FormUrlEncoded
     @POST("login")
     Call<UserResponse> login(@Field("email") String email,

@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageButton
-        android:id="@+id/back"
+        android:id="@+id/btnBack"
         android:layout_width="55dp"
         android:layout_height="48dp"
         android:layout_marginStart="5dp"
@@ -83,7 +83,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/mail"
+        android:id="@+id/tfName"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="350dp"
         android:layout_height="50dp"
@@ -98,21 +98,52 @@
         app:layout_constraintTop_toBottomOf="@+id/profile">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputUsername"
+            android:id="@+id/inName"
             android:layout_width="350dp"
             android:layout_height="52dp"
             android:layout_marginLeft="-10dp"
             android:layout_marginTop="-10dp"
             android:autofillHints=""
             android:backgroundTint="@android:color/white"
-            android:hint="@string/username"
+            android:hint="@string/nameD"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="15dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/pass"
+        android:id="@+id/tfPhone"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_text_radius"
+        android:fontFamily="@font/mregular"
+        android:padding="10dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColorHint="@color/hintText"
+        app:layout_constraintTop_toBottomOf="@+id/tfName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inPhone"
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="-10dp"
+            android:autofillHints=""
+            android:backgroundTint="@android:color/white"
+            android:hint="@string/phoneD"
+            android:inputType="number"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tfCountry"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="350dp"
         android:layout_height="50dp"
@@ -124,17 +155,17 @@
         android:textColorHint="@color/hintText"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mail">
+        app:layout_constraintTop_toBottomOf="@+id/tfPhone">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phoneInput"
+            android:id="@+id/inCountry"
             android:layout_width="350dp"
             android:layout_height="52dp"
             android:layout_marginLeft="-10dp"
             android:layout_marginTop="-10dp"
             android:autofillHints=""
             android:backgroundTint="@android:color/white"
-            android:hint="@string/country"
+            android:hint="@string/countryD"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="15dp" />
@@ -156,6 +187,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass" />
+        app:layout_constraintTop_toBottomOf="@+id/tfCountry" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
