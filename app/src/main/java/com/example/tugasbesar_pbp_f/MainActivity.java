@@ -47,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private PlaceAutocomplete placeAutocomplete;
     private MaterialButton btnSearch;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sharedPreferences = getSharedPreferences("userLogin", MODE_PRIVATE);
 
         SettingsMode.sharedPreferences = getSharedPreferences("night",0);
 
@@ -165,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         logout(this);
     }
 
-    public static void logout(final Activity activity) {
+    public void logout(final Activity activity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setTitle("Logout");
         builder.setMessage("Are you sure want to logout?");
@@ -175,6 +177,10 @@ public class MainActivity extends AppCompatActivity {
 //                SharedPreferences.Editor editor =  Login.statusLogin.edit();
 //                editor.putBoolean("status_login",false);
 //                editor.commit();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("id", null);
+                editor.putString("status",null);
+                editor.commit();
 
                 activity.finishAffinity();
                 System.exit(0);

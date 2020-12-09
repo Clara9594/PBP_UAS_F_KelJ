@@ -104,7 +104,7 @@ public interface ApiInterface {
 
     @PUT("car/{id}")
     @FormUrlEncoded
-    Call<CarResponse> updateCar(@Path("id") int id,
+    Call<CarResponse> updateCar(@Path("id") String id,
                                 @Field("tipe") String tipe,
                                 @Field("merek" ) String merek,
                                 @Field("penumpang") int penumpang,
