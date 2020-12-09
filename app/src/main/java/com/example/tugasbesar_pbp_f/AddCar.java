@@ -53,7 +53,6 @@ public class AddCar extends AppCompatActivity {
             ActivityCompat.requestPermissions(AddCar.this,
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     MY_PERMISSION_REQUEST);
-
         }
 
         inCarName = findViewById(R.id.inCarName);
@@ -70,6 +69,22 @@ public class AddCar extends AppCompatActivity {
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(inCarName.getText().toString().isEmpty() && inCarType.getText().toString().isEmpty() && inPassanger.getText().toString().isEmpty()
+                && inBags.getText().toString().isEmpty() && inFuel.getText().toString().isEmpty() && inTotal.getText().toString().isEmpty()){
+                    Toast.makeText(AddCar.this, "Please Enter Car's Data", Toast.LENGTH_SHORT).show();
+                }else if(inCarName.getText().toString().isEmpty()){
+                    Toast.makeText(AddCar.this, "Please Enter Car's Name", Toast.LENGTH_SHORT).show();
+                }else if(inCarType.getText().toString().isEmpty()){
+                    Toast.makeText(AddCar.this, "Please Enter Car's Type", Toast.LENGTH_SHORT).show();
+                }else if(inPassanger.getText().toString().isEmpty()){
+                    Toast.makeText(AddCar.this, "Please Enter Passanger", Toast.LENGTH_SHORT).show();
+                }else if(inBags.getText().toString().isEmpty()){
+                    Toast.makeText(AddCar.this, "Please Enter Bags", Toast.LENGTH_SHORT).show();
+                }else if(inFuel.getText().toString().isEmpty()){
+                    Toast.makeText(AddCar.this, "Please Enter Fuel", Toast.LENGTH_SHORT).show();
+                }else if(inTotal.getText().toString().isEmpty()){
+                    Toast.makeText(AddCar.this, "Please Enter Total", Toast.LENGTH_SHORT).show();
+                }
                 saveCar();
             }
         });
@@ -103,34 +118,40 @@ public class AddCar extends AppCompatActivity {
 
     private void saveCar(){
         String CarImage = imageToString();
-        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<CarResponse> add = apiService.createCar(inCarName.getText().toString(),
-                inCarType.getText().toString(), Integer.parseInt(inPassanger.getText().toString()),
-                Integer.parseInt(inBags.getText().toString()),inFuel.getText().toString(),
-                Integer.parseInt(inTotal.getText().toString()),CarImage,inCarPlat.getText().toString());
-        add.enqueue(new Callback<CarResponse>() {
-            @Override
-            public void onResponse(Call<CarResponse> call, Response<CarResponse> response) {
-                Toast.makeText(AddCar.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                //progressDialog.dismiss();
-                onBackPressed();
-            }
+        if(CarImage==null){
+            Toast.makeText(AddCar.this,"Doesn't Upload Photo", Toast.LENGTH_SHORT).show();
+        }else {
+            ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+            Call<CarResponse> add = apiService.createCar(inCarName.getText().toString(),
+                    inCarType.getText().toString(), Integer.parseInt(inPassanger.getText().toString()),
+                    Integer.parseInt(inBags.getText().toString()), inFuel.getText().toString(),
+                    Integer.parseInt(inTotal.getText().toString()), CarImage, inCarPlat.getText().toString());
+            add.enqueue(new Callback<CarResponse>() {
+                @Override
+                public void onResponse(Call<CarResponse> call, Response<CarResponse> response) {
+                    Toast.makeText(AddCar.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    //progressDialog.dismiss();
+                    onBackPressed();
+                }
 
-            @Override
-            public void onFailure(Call<CarResponse> call, Throwable t) {
-                Toast.makeText(AddCar.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-                //progressDialog.dismiss();
-            }
-        });
+                @Override
+                public void onFailure(Call<CarResponse> call, Throwable t) {
+                    Toast.makeText(AddCar.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                    //progressDialog.dismiss();
+                }
+            });
+        }
     }
 
     private String imageToString(){
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
-        byte[] imageInByte = byteArrayOutputStream.toByteArray();
+        if(bitmap!=null){
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+            byte[] imageInByte = byteArrayOutputStream.toByteArray();
+            return Base64.encodeToString(imageInByte,Base64.DEFAULT);
 
-        return Base64.encodeToString(imageInByte,Base64.DEFAULT);
-
+        }
+        return null;
     }
 
 }

@@ -1,8 +1,7 @@
 package com.example.tugasbesar_pbp_f.UnitTest;
 
 import com.example.tugasbesar_pbp_f.UserDAO;
-//private TextInputEditText email,
-//        password, phone, country, name;
+
 public interface SignUpView {
     String getEmail();
     String getPassword();

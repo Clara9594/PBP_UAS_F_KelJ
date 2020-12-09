@@ -11,41 +11,19 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
+
 public class SignUpPresenterTest {
     @Mock
     private SignUpView view;
     @Mock
     private SignUpService service;
+    @Mock
     private SignUpPresenter presenter;
+
     @Before
     public void setUp() throws Exception {
         presenter = new SignUpPresenter(view, service);
     }
-
-//    if (view.getName().isEmpty()) {
-//            view.showNameError("Please Enter Name");
-//            return;
-//        } else if (view.getEmail().isEmpty()) {
-//            view.showEmailError("Please Enter Email!");
-//            return;
-//        } else if (view.getPassword().isEmpty()) {
-//            view.showPasswordError("Please Enter Password!");
-//            return;
-//        } else if (view.getPassword().length() < 8) {
-//            view.showPasswordError("Password too short!");
-//            return;
-//        } else if (view.getEmail().matches(pattern)) {
-//            view.showEmailError("Email Invalid!");
-//            return;
-//        } else if (view.getPhone().length() < 12) {
-//                view.showPhoneError("Phone too short!");
-//                return;
-//        } else if (view.getPhone().isEmpty()) {
-//            view.showPhoneError("Please Enter Telp");
-//            return;
-//        } else if (view.getCountry().isEmpty()) {
-//            view.showCountryError("Please Enter Country!");
-//            return;
 
     @Test
     public void shouldShowErrorMessageWhenNameIsEmpty()
@@ -79,7 +57,7 @@ public class SignUpPresenterTest {
         System.out.println("Email : " + view.getEmail());
 
         when(view.getPassword()).thenReturn("");
-        System.out.println("Password : " + view.getEmail());
+        System.out.println("Password : " + view.getPassword());
         presenter.onLoginClicked();
         verify(view).showPasswordError("Please Enter Password!");
     }
@@ -155,9 +133,9 @@ public class SignUpPresenterTest {
     public void shouldShowErrorMessageWhenCountryIsEmpty()
             throws Exception {
         when(view.getName()).thenReturn("Clara");
-        System.out.println("name : " + view.getName());
+        System.out.println("Name : " + view.getName());
 
-        when(view.getPassword()).thenReturn("123");
+        when(view.getPassword()).thenReturn("clara1234");
         System.out.println("Password : " + view.getPassword());
 
         when(view.getEmail()).thenReturn("dillaarista33@gmail.com");
@@ -167,7 +145,7 @@ public class SignUpPresenterTest {
         System.out.println("Phone : " + view.getPhone());
 
         when(view.getCountry()).thenReturn("");
-        System.out.println("Phone : " + view.getCountry());
+        System.out.println("Country : " + view.getCountry());
         presenter.onLoginClicked();
         verify(view).showCountryError("Please Enter Country!");
     }

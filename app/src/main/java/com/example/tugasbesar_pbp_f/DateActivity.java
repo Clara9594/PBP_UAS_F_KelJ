@@ -67,8 +67,6 @@ public class DateActivity extends AppCompatActivity {
 
         pick_Up_Location = mBundle.getString("alamat");
 
-
-
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -259,13 +257,9 @@ public class DateActivity extends AppCompatActivity {
 //                    mBundle.putString("pick_Up_Time",pickTime.getText().toString());
 //                    mBundle.putString("drop_Off_Time",dropTime.getText().toString());
 
-
                     search.putExtra("durasi",mBundle);
                     startActivity(search);
                 }
-
-
-
 //                Intent pick = new Intent(DateActivity.this, Detail.class);
 //                Bundle mBundle1 = new Bundle();
 //                mBundle1.putLong("hari",elapsedDays);
