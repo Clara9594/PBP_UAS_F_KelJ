@@ -228,7 +228,6 @@ public class EditPesanan extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-
                 if(etPickDate.getText().toString().isEmpty() || etDropDate.getText().toString().isEmpty()
                         || etPickTime.getText().toString().isEmpty() || etDropTime.getText().toString().isEmpty()
                         || driverAgeText.getText().toString().isEmpty()) {
@@ -290,7 +289,6 @@ public class EditPesanan extends AppCompatActivity {
         add.enqueue(new Callback<BookingResponse>() {
             @Override
             public void onResponse(Call<BookingResponse> call, Response<BookingResponse> response) {
-                //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm aa");
                 sPickDate = response.body().getBookings().get(0).getPick_Up_Date();
                 sDropDate = response.body().getBookings().get(0).getDrop_Off_Date();
                 sPickTime = response.body().getBookings().get(0).getPick_Up_Time();

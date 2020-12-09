@@ -133,6 +133,7 @@
     <string name="fuel">Fuel</string>
     <string name="file">Select a file</string>
     <string name="cPrice">Price</string>
+    <string name="plat">Car License Plate</string>
 
 
     <!--    ini buat detail booking-->

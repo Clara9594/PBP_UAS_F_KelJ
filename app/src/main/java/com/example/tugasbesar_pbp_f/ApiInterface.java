@@ -94,13 +94,25 @@ public interface ApiInterface {
     @POST("car")
     @FormUrlEncoded
     Call<CarResponse> createCar(@Field("tipe") String tipe,
-                                        @Field("merek" ) String merek,
-                                        @Field("penumpang") int penumpang,
-                                        @Field("tas") int tas,
-                                        @Field("bensin") String bensin,
-                                        @Field("harga") int harga,
-                                        @Field("imgURL") String imgURL,
-                                        @Field("plat_nomor") String plat_nomor);
+                                @Field("merek") String merek,
+                                @Field("penumpang") int penumpang,
+                                @Field("tas") int tas,
+                                @Field("bensin") String bensin,
+                                @Field("harga") int harga,
+                                @Field("imgURL") String imgURL,
+                                @Field("plat_nomor") String plat_nomor);
+
+    @PUT("car/{id}")
+    @FormUrlEncoded
+    Call<CarResponse> updateCar(@Path("id") int id,
+                                @Field("tipe") String tipe,
+                                @Field("merek" ) String merek,
+                                @Field("penumpang") int penumpang,
+                                @Field("tas") int tas,
+                                @Field("bensin") String bensin,
+                                @Field("harga") int harga,
+                                @Field("imgURL") String imgURL,
+                                @Field("plat_nomor") String plat_nomor);
 
 
     @GET("car")

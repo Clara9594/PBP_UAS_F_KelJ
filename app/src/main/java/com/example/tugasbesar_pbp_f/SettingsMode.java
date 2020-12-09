@@ -13,8 +13,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
 
 public class SettingsMode extends AppCompatActivity {
+    public static SharedPreferences sharedPreferences;
     static SwitchCompat switchCompat;
-    static SharedPreferences sharedPreferences;
     ImageButton btnLogout;
 
     @Override

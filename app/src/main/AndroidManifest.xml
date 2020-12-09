@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login" />
-        <activity android:name=".SignUp" />
+        <activity android:name=".UnitTest.SignUp" />
         <activity android:name=".SettingsMode" />
         <activity android:name=".About" />
         <activity android:name=".Profile" />

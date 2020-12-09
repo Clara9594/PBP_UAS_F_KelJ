@@ -54,9 +54,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="150dp"
+            android:layout_width="151dp"
             android:layout_height="150dp"
             android:layout_marginStart="50dp"
             android:layout_marginTop="8dp"
@@ -66,7 +67,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutCName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"

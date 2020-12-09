@@ -1,43 +1,33 @@
-package com.example.tugasbesar_pbp_f;
+package com.example.tugasbesar_pbp_f.UnitTest;
 
-import android.Manifest;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.tugasbesar_pbp_f.ApiClient;
+import com.example.tugasbesar_pbp_f.ApiInterface;
+import com.example.tugasbesar_pbp_f.Login;
+import com.example.tugasbesar_pbp_f.R;
+import com.example.tugasbesar_pbp_f.SettingsMode;
+import com.example.tugasbesar_pbp_f.UserDAO;
+import com.example.tugasbesar_pbp_f.UserResponse;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import java.util.Properties;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.Field;
 
 
-public class SignUp extends AppCompatActivity {
+public class SignUp extends AppCompatActivity implements SignUpView{
     FirebaseAuth mAuth;
     private TextInputEditText email,
             password, phone, country, name;
@@ -45,6 +35,7 @@ public class SignUp extends AppCompatActivity {
     private MaterialButton btn;
     private ImageButton back;
     private ProgressDialog progressDialog;
+    private SignUpPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +61,8 @@ public class SignUp extends AppCompatActivity {
         phone = findViewById(R.id.phoneInput);
         progressDialog = new ProgressDialog(this);
 
+        presenter = new SignUpPresenter(this, new SignUpService());
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,14 +85,16 @@ public class SignUp extends AppCompatActivity {
                     Toast.makeText(SignUp.this, "Please Enter Email!", Toast.LENGTH_SHORT).show();
                 } else if (pass.isEmpty()) {
                     Toast.makeText(SignUp.this, "Please Enter Password!", Toast.LENGTH_SHORT).show();
-                } else if (pass.length() < 6) {
+                } else if (pass.length() < 8) {
                     Toast.makeText(SignUp.this, "Password too short!", Toast.LENGTH_SHORT).show();
                 } else if (!mail.matches(pattern)) {
                     Toast.makeText(SignUp.this, "Email Invalid!", Toast.LENGTH_SHORT).show();
                 } else if (nama.isEmpty()) {
                     Toast.makeText(SignUp.this, "Please Enter Your Name!", Toast.LENGTH_SHORT).show();
-                } else if (telp.length() < 13) {
-                    Toast.makeText(SignUp.this, "Phone is invalid!", Toast.LENGTH_SHORT).show();
+                } else if (telp.length() < 12) {
+                    Toast.makeText(SignUp.this, "Phone too short!", Toast.LENGTH_SHORT).show();
+                } else if (telp.isEmpty()) {
+                    Toast.makeText(SignUp.this, "Please Enter Telp", Toast.LENGTH_SHORT).show();
                 } else if (negara.isEmpty()) {
                     Toast.makeText(SignUp.this, "Please Enter Country!", Toast.LENGTH_SHORT).show();
                 } else {
@@ -139,5 +134,85 @@ public class SignUp extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         });
+    }
+
+    @Override
+    public String getEmail() {
+        return email.getText().toString();
+    }
+
+    @Override
+    public String getPassword() {
+        return password.getText().toString();
+    }
+
+    @Override
+    public String getPhone() {
+        return phone.getText().toString();
+    }
+
+    @Override
+    public String getCountry() {
+        return country.getText().toString();
+    }
+
+    @Override
+    public String getName() {
+        return name.getText().toString();
+    }
+
+    @Override
+    public void showEmailError(String message) {
+        email.setError(message);
+    }
+
+    @Override
+    public void showEmailInvalid(String message) {
+        email.setError(message);
+    }
+
+    @Override
+    public void showPasswordError(String message) {
+        password.setError(message);
+    }
+
+    @Override
+    public void showPhoneError(String message) {
+       phone.setError(message);
+    }
+
+    @Override
+    public void showPhoneLess(String message) {
+        phone.setError(message);
+    }
+
+    @Override
+    public void showCountryError(String message) {
+        country.setError(message);
+    }
+
+    @Override
+    public void showNameError(String message) {
+        name.setError(message);
+    }
+
+    @Override
+    public void startAdminActivity() {
+        new ActivityUtil(this).startAdminActivity();
+    }
+
+    @Override
+    public void startMainActivity(UserDAO user) {
+        new ActivityUtil(this).startMainActivity(user);
+    }
+
+    @Override
+    public void showSignUpError(String message) {
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showErrorResponse(String message) {
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
 }

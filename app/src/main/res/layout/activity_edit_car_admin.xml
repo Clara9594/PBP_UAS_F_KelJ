@@ -6,36 +6,67 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background">
-        <LinearLayout
-            android:id="@+id/toolbar4"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@color/toolbar"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintTop_toTopOf="parent">
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ibBack"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/ic_baseline_chevron_left_24"
-                android:foreground="?android:attr/selectableItemBackground"/>
+    <LinearLayout
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ibBack"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/ic_baseline_chevron_left_24"
+            android:foreground="?android:attr/selectableItemBackground"/>
 
-            <ImageView
-                android:layout_width="101dp"
-                android:layout_height="63dp"
-                android:layout_marginStart="85dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="50dp"
-                android:src="@drawable/logo" />
-        </LinearLayout>
+        <ImageView
+            android:layout_width="101dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/logo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/foto"
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:layout_below="@+id/toolbar4"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="50dp"
+            android:fontFamily="@font/mbold"
+            android:text="Edit Car"
+            android:textColor="@android:color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="104dp"
+            android:layout_below="@+id/edit"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="150dp"
+            android:src="@drawable/logo"
+            />
+    </LinearLayout>
 
     <ScrollView
-        android:layout_below="@id/toolbar4"
+        android:layout_below="@id/foto"
         android:layout_above="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -67,17 +98,31 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/twTipe"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ddType"
-                    android:layout_marginVertical="10dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-                    <AutoCompleteTextView
-                        android:id="@+id/edType"
+                    android:hint="@string/cType"
+                    android:layout_marginTop="5dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTipe"
+                        android:inputType="text"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/cType"
-                        android:inputType="none" />
+                        android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/twPlat"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/plat"
+                    android:layout_marginTop="5dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPlat"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -85,7 +130,8 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:hint="@string/passanger">
+                    android:hint="@string/passanger"
+                    android:layout_marginTop="5dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etPss"
@@ -111,68 +157,67 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ddFuel"
-                    android:layout_marginVertical="10dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
-                    <AutoCompleteTextView
-                        android:id="@+id/edFuel"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/fuel"
-                        android:inputType="none"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ddFile"
-                    android:layout_marginVertical="10dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edFile"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/file"
-                        android:inputType="text"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/twPrice"
+                    android:id="@+id/twFuel"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp"
-                    android:hint="@string/cPrice">
+                    android:hint="@string/fuel"
+                    android:layout_marginTop="5dp">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etPrice"
-                        android:inputType="textPassword"
+                        android:id="@+id/etFuel"
+                        android:inputType="text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cPrice"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="3dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/cPrice"
+                        android:inputType="text"/>
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </ScrollView>
 
     <RelativeLayout
+        android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:id="@+id/footer"
         android:background="@color/white"
-        android:padding="20dp"
-        android:backgroundTint="@color/background">
+        android:backgroundTint="@color/background"
+        android:padding="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUpload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/file"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/buttonSignUp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btnEdit"
-            android:textColor="@color/white"
+            android:layout_below="@+id/btnUpload"
             android:layout_alignParentRight="true"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginBottom="10dp"
-            app:backgroundTint="@color/buttonSignIn"/>
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/btnEdit"
+            app:backgroundTint="@color/buttonSignIn" />
     </RelativeLayout>
 </RelativeLayout>
