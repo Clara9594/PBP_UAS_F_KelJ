@@ -50,7 +50,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         final CarDAO car = result.get(position);
         //holder.imageView.setImageURI(car.getImgURL());
         Glide.with(context)
-                .load("https://cardido.masuk.web.id/public/gambarMobil/" + car.getImgURL())
+                //.load("https://cardido.masuk.web.id/public/gambarMobil/" + car.getImgURL())
+                .load("https://cardido.masuk.web.id/storage/app/public/" + car.getImgURL())
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .skipMemoryCache(true)
                 .into(holder.imageView);

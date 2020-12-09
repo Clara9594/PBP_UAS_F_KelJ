@@ -138,7 +138,7 @@ public class DetailCar extends DialogFragment {
                 twPrice.setText(String.valueOf(sPrice));
                 twPlat.setText(sCarPlat);
                 Glide.with(getContext())
-                        .load("https://cardido.masuk.web.id/public/gambarMobil/" + sImageCar)
+                        .load("https://cardido.masuk.web.id/storage/app/public/" + sImageCar)
                         .diskCacheStrategy(DiskCacheStrategy.NONE)
                         .skipMemoryCache(true)
                         .into(image_car);

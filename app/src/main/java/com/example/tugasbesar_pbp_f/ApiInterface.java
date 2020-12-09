@@ -24,12 +24,12 @@ public interface ApiInterface {
     Call<UserResponse> getUserById(@Path("id")String id,
                                    @Query("data") String data);
     @FormUrlEncoded
-    @POST("/public/api/login")
+    @POST("login")
     Call<UserResponse> login(@Field("email") String email,
                              @Field("password") String password);
 
     @FormUrlEncoded
-    @POST("/public/api/register")
+    @POST("register")
     Call<UserResponse> register(@Field("name") String name,
                                 @Field("phone") String phone,
                                 @Field("email") String email,
@@ -80,16 +80,28 @@ public interface ApiInterface {
     Call<BookingResponse> deleteBooking(@Path("id") String id);
 
     //////BERBAGAI METHOD CAR
-    @Multipart
+//    @Multipart
+//    @POST("car")
+//    Call<CarResponse> createCar(@Part("tipe") RequestBody tipe,
+//                                @Part("merek") RequestBody merek,
+//                                @Part("penumpang") RequestBody penumpang,
+//                                @Part("tas") RequestBody tas,
+//                                @Part("bensin")RequestBody bensin,
+//                                @Part("harga")RequestBody harga,
+//                                @Part MultipartBody.Part imgURL,
+//                                @Part("plat_nomor")RequestBody plat_nomor);
+
     @POST("car")
-    Call<CarResponse> createCar(@Part("tipe") RequestBody tipe,
-                                @Part("merek") RequestBody merek,
-                                @Part("penumpang") RequestBody penumpang,
-                                @Part("tas") RequestBody tas,
-                                @Part("bensin")RequestBody bensin,
-                                @Part("harga")RequestBody harga,
-                                @Part MultipartBody.Part imgURL,
-                                @Part("plat_nomor")RequestBody plat_nomor);
+    @FormUrlEncoded
+    Call<CarResponse> createCar(@Field("tipe") String tipe,
+                                        @Field("merek" ) String merek,
+                                        @Field("penumpang") int penumpang,
+                                        @Field("tas") int tas,
+                                        @Field("bensin") String bensin,
+                                        @Field("harga") int harga,
+                                        @Field("imgURL") String imgURL,
+                                        @Field("plat_nomor") String plat_nomor);
+
 
     @GET("car")
     Call<CarResponse> getAllCars(@Query("data") String data);

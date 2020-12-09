@@ -8,17 +8,23 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -31,6 +37,10 @@ public class AddCar extends AppCompatActivity {
     private EditText inCarName,inCarType, inPassanger,inBags,inFuel,inTotal,inCarPlat;
     private MaterialButton btnCreate, btnUnggah;
     private String filePath="";
+    private Bitmap bitmap;
+    private ImageView imageView;
+    private final int MY_PERMISSION_REQUEST = 777;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +52,7 @@ public class AddCar extends AppCompatActivity {
                 PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(AddCar.this,
                     new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                    100);
+                    MY_PERMISSION_REQUEST);
 
         }
 
@@ -55,6 +65,7 @@ public class AddCar extends AppCompatActivity {
         inCarPlat = findViewById(R.id.inCarPlat);
         btnCreate = findViewById(R.id.btnSaveCar);
         btnUnggah = findViewById(R.id.btnGaleri);
+        imageView = findViewById(R.id.imageView4);
 
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,30 +80,34 @@ public class AddCar extends AppCompatActivity {
                Intent i = new Intent();
                i.setType("image/*");
                i.setAction(Intent.ACTION_GET_CONTENT);
-               startActivityForResult(Intent.createChooser(i,"Select Car Picture"),9544);
+               startActivityForResult(i,MY_PERMISSION_REQUEST);
             }
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == MY_PERMISSION_REQUEST && resultCode == RESULT_OK && data!=null){
+            Uri path = data.getData();
+            try{
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),path);
+                imageView.setImageBitmap(bitmap);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+
+        }
+    }
+
     private void saveCar(){
-
-
-        RequestBody carNamePart = RequestBody.create(MultipartBody.FORM,inCarName.getText().toString());
-        RequestBody carTypePart = RequestBody.create(MultipartBody.FORM,inCarType.getText().toString());
-        RequestBody carPassengerPart = RequestBody.create(MultipartBody.FORM,inPassanger.getText().toString());
-        RequestBody carBagsPart = RequestBody.create(MultipartBody.FORM,inBags.getText().toString());
-        RequestBody carFuelPart = RequestBody.create(MultipartBody.FORM,inFuel.getText().toString());
-        RequestBody carTotalPart = RequestBody.create(MultipartBody.FORM,inTotal.getText().toString());
-        RequestBody carPlatPart = RequestBody.create(MultipartBody.FORM,inCarPlat.getText().toString());
-
-        File file = new File(filePath);
-        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-file"),file);
-        MultipartBody.Part partImage = MultipartBody.Part.createFormData("imgURL",file.getName(),requestBody);
-
+        String CarImage = imageToString();
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<CarResponse> add = apiService.createCar(carNamePart,
-                carTypePart, carPassengerPart, carBagsPart,carFuelPart,
-                carTotalPart,partImage,carPlatPart);
+        Call<CarResponse> add = apiService.createCar(inCarName.getText().toString(),
+                inCarType.getText().toString(), Integer.parseInt(inPassanger.getText().toString()),
+                Integer.parseInt(inBags.getText().toString()),inFuel.getText().toString(),
+                Integer.parseInt(inTotal.getText().toString()),CarImage,inCarPlat.getText().toString());
         add.enqueue(new Callback<CarResponse>() {
             @Override
             public void onResponse(Call<CarResponse> call, Response<CarResponse> response) {
@@ -109,33 +124,13 @@ public class AddCar extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    private String imageToString(){
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
+        byte[] imageInByte = byteArrayOutputStream.toByteArray();
 
-        if (resultCode == RESULT_OK)
-        {
-            if(requestCode == 9544)
-            {
-                Uri dataimage = data.getData();
-                String[] imageprojection = {MediaStore.Images.Media.DATA};
-                Cursor cursor = getContentResolver().query(dataimage,imageprojection,null,null,null);
+        return Base64.encodeToString(imageInByte,Base64.DEFAULT);
 
-                if (cursor != null)
-                {
-                    cursor.moveToFirst();
-                    int indexImage = cursor.getColumnIndex(imageprojection[0]);
-                    filePath = cursor.getString(indexImage);
-
-                    if(filePath != null)
-                    {
-                        File image = new File(filePath);
-                        //imgHolder.setImageBitmap(BitmapFactory.decodeFile(image.getAbsolutePath()));
-                    }
-                }
-            }
-        }
     }
-
 
 }
