@@ -15,7 +15,7 @@
         android:background="#212b66"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/logo"
@@ -60,14 +60,13 @@
 
     <ImageView
         android:id="@+id/profil"
-        android:layout_width="84dp"
-        android:layout_height="116dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="153dp"
+        android:layout_height="183dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="80dp"
         android:src="@drawable/profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
     <ImageButton
         android:id="@+id/back"
@@ -83,23 +82,21 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/firstName"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="167dp"
+        android:layout_width="350dp"
         android:layout_height="52dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/edit_text_radius"
         android:fontFamily="@font/mregular"
+        android:layout_marginLeft="20dp"
         android:padding="10dp"
         android:textColorHint="@color/hintText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toEndOf="@+id/profil"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/firstNameInput"
-            android:layout_width="167dp"
-            android:layout_height="54dp"
+            android:id="@+id/nameInput"
+            android:layout_width="350dp"
+            android:layout_height="52dp"
             android:layout_marginLeft="-10dp"
             android:layout_marginTop="-10dp"
             android:autofillHints=""
@@ -110,45 +107,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lastName"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="165dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/edit_text_radius"
-        android:fontFamily="@font/mregular"
-        android:padding="10dp"
-        android:textColorHint="@color/hintText"
-        app:layout_constraintStart_toEndOf="@+id/firstName"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/lastNameInput"
-            android:layout_width="165dp"
-            android:layout_height="52dp"
-            android:layout_marginLeft="-10dp"
-            android:layout_marginTop="-10dp"
-            android:autofillHints=""
-            android:backgroundTint="@android:color/white"
-            android:hint="@string/last"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/mail"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="75dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/edit_text_radius"
         android:fontFamily="@font/mregular"
         android:padding="10dp"
         android:textColorHint="@color/hintText"
-        app:layout_constraintStart_toEndOf="@+id/profil"
+        app:layout_constraintEnd_toEndOf="@+id/firstName"
+        app:layout_constraintStart_toStartOf="@+id/firstName"
         app:layout_constraintTop_toBottomOf="@+id/firstName">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -171,13 +140,13 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="75dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_radius"
         android:fontFamily="@font/mregular"
         android:padding="10dp"
         android:textColorHint="@color/hintText"
-        app:layout_constraintStart_toEndOf="@+id/profil"
+        app:layout_constraintEnd_toEndOf="@+id/mail"
+        app:layout_constraintStart_toStartOf="@+id/mail"
         app:layout_constraintTop_toBottomOf="@+id/mail">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -200,13 +169,12 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="167dp"
         android:layout_height="54dp"
-        android:layout_marginStart="75dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_radius"
         android:fontFamily="@font/mregular"
         android:padding="10dp"
         android:textColorHint="@color/hintText"
-        app:layout_constraintStart_toEndOf="@+id/profil"
+        app:layout_constraintStart_toStartOf="@+id/pass"
         app:layout_constraintTop_toBottomOf="@+id/pass">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -235,6 +203,7 @@
         android:fontFamily="@font/mregular"
         android:padding="10dp"
         android:textColorHint="@color/hintText"
+        app:layout_constraintEnd_toEndOf="@+id/pass"
         app:layout_constraintStart_toEndOf="@+id/phone"
         app:layout_constraintTop_toBottomOf="@+id/pass">
 
@@ -253,18 +222,18 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
-        android:layout_width="150dp"
+        android:layout_width="153dp"
         android:layout_height="50dp"
-        android:layout_marginTop="258dp"
         android:background="@drawable/edit_text_radius"
         android:fontFamily="@font/mregular"
         android:text="@string/signUp"
         android:textColor="#ffff"
         android:textSize="17dp"
-        app:backgroundTint="@color/buttonSignUp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toEndOf="@+id/country"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
-
+        app:backgroundTint="@color/toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/phone"
+        app:layout_constraintEnd_toEndOf="@+id/profil"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/profil"
+        app:layout_constraintTop_toTopOf="@+id/phone"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

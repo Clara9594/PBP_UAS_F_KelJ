@@ -20,7 +20,7 @@
             android:textSize="18dp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="@string/details"/>
+            android:text="Details"/>
 
         <ImageButton
             android:id="@+id/ibClose"
@@ -44,7 +44,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
-            app:cardBackgroundColor="@color/white"
             app:cardElevation="6dp"
             app:cardCornerRadius="6dp">
 
@@ -61,15 +60,16 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <TextView
+                            android:id="@+id/tvCID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:textSize="18dp"
-                            android:textStyle="bold"
-                            android:fontFamily="@font/mbold"
                             android:text="@string/id_car"
-                            android:textColor="@color/black"/>
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/twIDCar"
@@ -78,23 +78,24 @@
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvCID"
+                            android:gravity="end"
                             android:hint="@string/id_car"
-                            android:fontFamily="@font/mregular"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="15dp" />
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvCname"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:textSize="18dp"
+                            android:textSize="20dp"
                             android:textStyle="bold"
-                            android:fontFamily="@font/mbold"
                             android:text="@string/cars_name"
                             android:textColor="@color/black"/>
 
@@ -104,24 +105,25 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvCname"
                             android:hint="@string/cars_name"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:fontFamily="@font/mregular"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvCType"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:textSize="18dp"
+                            android:textSize="20dp"
                             android:textStyle="bold"
-                            android:fontFamily="@font/mbold"
                             android:text="@string/cars_type"
                             android:textColor="@color/black"/>
 
@@ -132,50 +134,52 @@
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvCType"
+                            android:gravity="end"
                             android:hint="@string/cars_type"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:fontFamily="@font/mregular"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvCPlat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:textSize="18dp"
+                            android:textSize="20dp"
                             android:textStyle="bold"
-                            android:fontFamily="@font/mbold"
                             android:text="@string/cars_plate"
                             android:textColor="@color/black"/>
 
                         <TextView
                             android:id="@+id/twCarPlat"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="195dp"
+                            android:layout_height="45dp"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvCPlat"
+                            android:gravity="end"
                             android:hint="@string/cars_plate"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:fontFamily="@font/mregular"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvPassanger"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:textSize="18dp"
+                            android:textSize="20dp"
                             android:textStyle="bold"
-                            android:fontFamily="@font/mbold"
                             android:text="@string/passanger"
                             android:textColor="@color/black"/>
 
@@ -185,23 +189,24 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvPassanger"
                             android:hint="@string/passanger"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:fontFamily="@font/mregular"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvBag"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:textSize="18dp"
+                            android:textSize="20dp"
                             android:textStyle="bold"
-                            android:fontFamily="@font/mbold"
                             android:text="@string/bags"
                             android:textColor="@color/black"/>
 
@@ -211,12 +216,13 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvBag"
                             android:hint="@string/bags"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:fontFamily="@font/mregular"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -225,28 +231,27 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:textSize="18dp"
+                            android:textSize="20dp"
                             android:textStyle="bold"
-                            android:fontFamily="@font/mbold"
                             android:text="@string/cars_pic"
                             android:textColor="@color/black"/>
 
-                        <com.github.siyamed.shapeimageview.CircularImageView
+                        <ImageView
                             android:id="@+id/image_car"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
+                            android:layout_width="75dp"
+                            android:layout_height="50dp"
                             android:layout_alignParentRight="true"/>
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvFuel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:textSize="18dp"
+                            android:textSize="20dp"
                             android:textStyle="bold"
-                            android:fontFamily="@font/mbold"
                             android:text="@string/fuel"
                             android:textColor="@color/black"/>
 
@@ -256,23 +261,24 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvFuel"
                             android:hint="@string/fuel"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:fontFamily="@font/mregular"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvPrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:textSize="18dp"
+                            android:textSize="20dp"
                             android:textStyle="bold"
-                            android:fontFamily="@font/mbold"
                             android:text="@string/priceInDetail"
                             android:textColor="@color/black"/>
 
@@ -282,12 +288,13 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvPrice"
                             android:hint="@string/priceInDetail"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:fontFamily="@font/mregular"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -303,11 +310,11 @@
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
                             android:text="@string/delete"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:layout_alignParentLeft="true"
                             android:layout_marginHorizontal="10dp"
                             android:layout_marginBottom="10dp"
-                            android:backgroundTint="#14CCC2"/>
+                            android:backgroundTint="@color/buttonSignUp"/>
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnEdit"
@@ -318,7 +325,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_marginHorizontal="10dp"
                             android:layout_marginBottom="10dp"
-                            app:backgroundTint="#21266B"/>
+                            app:backgroundTint="@color/buttonSignIn"/>
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>

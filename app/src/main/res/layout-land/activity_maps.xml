@@ -16,7 +16,8 @@
             android:id="@+id/next"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="720dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="end"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/buttonSignIn"
             android:fontFamily="@font/mregular"
@@ -29,7 +30,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="325dp"
-            android:layout_marginLeft="770dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/buttonSignIn"
+            app:tint="@color/white"
+            android:layout_gravity="end"
             android:clickable="true"
             app:srcCompat="@android:drawable/ic_search_category_default" />
     </com.mapbox.mapboxsdk.maps.MapView>

@@ -14,12 +14,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
             android:text="@string/jdlDetail"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="24dp"
             android:textStyle="bold" />
 
         <ImageButton
@@ -59,6 +61,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvId"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -66,23 +69,27 @@
                             android:textStyle="bold"
                             android:text="@string/id"
                             android:textColor="@color/black"/>
+
                         <TextView
+                            android:id="@+id/twId"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/twId"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvId"
                             android:hint="@string/id"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -90,23 +97,27 @@
                             android:textColor="@color/black"
                             android:textSize="20dp"
                             android:textStyle="bold" />
+
                         <TextView
+                            android:id="@+id/twName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/twName"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvName"
                             android:hint="@string/bName"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvPickUp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -114,23 +125,27 @@
                             android:textStyle="bold"
                             android:text="@string/pick_up_location"
                             android:textColor="@color/black"/>
+
                         <TextView
+                            android:id="@+id/twPickUp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/twPickUp"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvPickUp"
                             android:hint="@string/pick_up_location"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvBookDate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -146,6 +161,8 @@
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
+                            android:gravity="end"
+                            android:layout_toEndOf="@+id/tvBookDate"
                             android:hint="@string/dBooking"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
@@ -156,6 +173,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvBookTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -163,22 +181,26 @@
                             android:textStyle="bold"
                             android:text="@string/tBooking"
                             android:textColor="@color/black"/>
+
                         <TextView
+                            android:id="@+id/twTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/twTime"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvBookTime"
                             android:hint="@string/tBooking"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvCName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -186,22 +208,26 @@
                             android:textStyle="bold"
                             android:text="@string/cName"
                             android:textColor="@color/black"/>
+
                         <TextView
+                            android:id="@+id/twCarName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/twCarName"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
+                            android:gravity="end"
+                            android:layout_toEndOf="@+id/tvCName"
                             android:hint="@string/cName"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvCPlat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -209,22 +235,26 @@
                             android:textStyle="bold"
                             android:text="@string/cPlatNomor"
                             android:textColor="@color/black"/>
+
                         <TextView
+                            android:id="@+id/twCarPlat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/twCarPlat"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="-1dp"
+                            android:gravity="end"
+                            android:layout_toEndOf="@+id/tvCPlat"
                             android:hint="@string/cName"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvDrvAge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -232,22 +262,26 @@
                             android:textStyle="bold"
                             android:text="@string/driver_age"
                             android:textColor="@color/black"/>
+
                         <TextView
+                            android:id="@+id/twDriverAge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/twDriverAge"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvDrvAge"
                             android:hint="@string/driver_age"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <TextView
+                            android:id="@+id/tvPrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -255,22 +289,55 @@
                             android:textStyle="bold"
                             android:text="@string/cPrice"
                             android:textColor="@color/black"/>
+
                         <TextView
+                            android:id="@+id/twPrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/twPrice"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
+                            android:gravity="end"
                             android:layout_marginEnd="-1dp"
+                            android:layout_toEndOf="@+id/tvPrice"
                             android:hint="@string/cPrice"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp"/>
+                            android:textSize="20dp" />
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:padding="20dp">
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDelete"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/buttonSignUp"
+                android:text="@string/btnDelete"
+                android:textColor="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEdit"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/buttonSignIn"
+                android:text="@string/btnEdit"
+                android:textColor="@color/white" />
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>

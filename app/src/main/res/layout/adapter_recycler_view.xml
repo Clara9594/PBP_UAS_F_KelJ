@@ -60,8 +60,8 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/passenger"
-                android:layout_width="98dp"
-                android:layout_height="22dp"
+                android:layout_width="46dp"
+                android:layout_height="27dp"
                 android:layout_marginTop="4dp"
                 android:maxLines="3"
                 android:textSize="18sp"
@@ -74,13 +74,12 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="4dp"
                 android:fontFamily="@font/mregular"
                 android:text="@string/passanger"
                 android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/brand_car" />
+                app:layout_constraintBottom_toBottomOf="@+id/passenger"
+                app:layout_constraintStart_toEndOf="@+id/passenger"
+                app:layout_constraintTop_toTopOf="@+id/passenger" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/bag"
@@ -96,15 +95,15 @@
                 tools:ignore="SmallSp" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="44dp"
-                android:layout_marginTop="36dp"
                 android:fontFamily="@font/mregular"
                 android:text="@string/bags"
                 android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/brand_car" />
+                app:layout_constraintBottom_toBottomOf="@+id/bag"
+                app:layout_constraintStart_toEndOf="@+id/bag"
+                app:layout_constraintTop_toTopOf="@+id/bag" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fuel"
@@ -139,18 +138,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:maxLines="3"
-                android:textSize="23sp"
-
+                android:textSize="20sp"
+                android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="@+id/image_car"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/image_car"
                 app:layout_constraintTop_toBottomOf="@+id/image_car"
                 tools:ignore="SmallSp" />
 
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </com.google.android.material.card.MaterialCardView>
 </layout>
