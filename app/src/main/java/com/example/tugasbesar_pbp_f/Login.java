@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.example.tugasbesar_pbp_f.UnitTest.SignUp;
 import com.google.android.material.button.MaterialButton;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -37,13 +38,13 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 //        setContentView(R.layout.activity_login);
-//        SettingsMode.sharedPreferences = getSharedPreferences("night",0);
-//        Boolean booleanValue = SettingsMode.sharedPreferences.getBoolean("night_mode",true);
-//        if(booleanValue){
-//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//        }
-//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//        }
+        SettingsMode.sharedPreferences = getSharedPreferences("night",0);
+        Boolean booleanValue = SettingsMode.sharedPreferences.getBoolean("night_mode",true);
+        if(booleanValue){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
 //
 //        mFirebaseAuth = FirebaseAuth.getInstance();
         edtEmail = findViewById(R.id.emailInput);

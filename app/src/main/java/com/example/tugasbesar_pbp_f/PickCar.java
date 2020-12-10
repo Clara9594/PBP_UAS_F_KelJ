@@ -66,9 +66,14 @@ public class PickCar extends AppCompatActivity {
         call.enqueue(new Callback<CarResponse>() {
             @Override
             public void onResponse(Call<CarResponse> call, Response<CarResponse> response) {
-                generateDataList(response.body().getCars());
-                Toast.makeText(PickCar.this, "BISA CUK", Toast.LENGTH_SHORT).show();
-                swipeRefreshLayout.setRefreshing(false);
+                if(response.body()==null){
+                    Toast.makeText(PickCar.this,"List Mobil kosong",Toast.LENGTH_SHORT).show();
+                    swipeRefreshLayout.setRefreshing(false);
+                }else{
+                    generateDataList(response.body().getCars());
+                    //Toast.makeText(PickCar.this, "BISA CUK", Toast.LENGTH_SHORT).show();
+                    swipeRefreshLayout.setRefreshing(false);
+                }
             }
 
             @Override

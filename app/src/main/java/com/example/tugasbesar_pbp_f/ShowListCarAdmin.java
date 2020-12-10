@@ -43,9 +43,14 @@ public class ShowListCarAdmin extends AppCompatActivity {
         call.enqueue(new Callback<CarResponse>() {
             @Override
             public void onResponse(Call<CarResponse> call, Response<CarResponse> response) {
-                generateDataList(response.body().getCars());
-                Toast.makeText(ShowListCarAdmin.this, "Load Cars Data Successful", Toast.LENGTH_SHORT).show();
-                swipeRefreshLayout.setRefreshing(false);
+                if(response.body()==null) {
+                    Toast.makeText(ShowListCarAdmin.this, "List Mobil kosong", Toast.LENGTH_SHORT).show();
+                    swipeRefreshLayout.setRefreshing(false);
+                }else{
+                    generateDataList(response.body().getCars());
+                    Toast.makeText(ShowListCarAdmin.this, "Load Cars Data Successful", Toast.LENGTH_SHORT).show();
+                    swipeRefreshLayout.setRefreshing(false);
+                }
             }
 
             @Override

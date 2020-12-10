@@ -70,6 +70,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpload"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/edit_text_radius"
+        android:fontFamily="@font/mregular"
+        android:text="Upload Photo"
+        android:textColor="#ffff"
+        android:textSize="17dp"
+        app:backgroundTint="@color/buttonSignIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile" />
+
     <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="55dp"
@@ -95,7 +113,7 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textColorHint="@color/hintText"
-        app:layout_constraintTop_toBottomOf="@+id/profile">
+        app:layout_constraintTop_toBottomOf="@+id/btnUpload">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inName"

@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
-
 import android.widget.Filterable;
 import android.widget.TextView;
 
@@ -16,17 +15,14 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.button.MaterialButton;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyBookingRecyclerAdapter extends RecyclerView.Adapter<MyBookingRecyclerAdapter.RoomViewHolder> implements Filterable {
-
+public class ShowOrderListAdapter extends RecyclerView.Adapter<ShowOrderListAdapter.RoomViewHolder> implements Filterable {
     private List<BookingDAO> dataList,filteredDataList;
     private Context context;
 
-    public MyBookingRecyclerAdapter(Context context, List<BookingDAO> dataList){
+    public ShowOrderListAdapter(Context context, List<BookingDAO> dataList){
         this.context = context;
         this.dataList = dataList;
         this.filteredDataList = dataList;
@@ -34,14 +30,14 @@ public class MyBookingRecyclerAdapter extends RecyclerView.Adapter<MyBookingRecy
 
     @NonNull
     @Override
-    public RoomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ShowOrderListAdapter.RoomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.adapter_recycler_view_my_booking, parent, false);
-        return new RoomViewHolder(view);
+        View view = layoutInflater.inflate(R.layout.adapter_recycler_view_booking_in_admin, parent, false);
+        return new ShowOrderListAdapter.RoomViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyBookingRecyclerAdapter.RoomViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ShowOrderListAdapter.RoomViewHolder holder, int position) {
         final BookingDAO brg = filteredDataList.get(position);
         holder.twBookingDate1.setText(brg.getPick_Up_Date());
         holder.twBookingDate2.setText(brg.getDrop_Off_Date());
@@ -54,7 +50,7 @@ public class MyBookingRecyclerAdapter extends RecyclerView.Adapter<MyBookingRecy
             @Override
             public void onClick(View view) {
                 FragmentManager manager = ((AppCompatActivity) context).getSupportFragmentManager();
-                DetailBooking dialog = new DetailBooking();
+                DetailBookingInAdmin dialog = new DetailBookingInAdmin();
                 dialog.show(manager,"dialog");
 
                 Bundle args = new Bundle();
