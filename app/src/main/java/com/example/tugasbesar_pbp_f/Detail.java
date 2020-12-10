@@ -107,7 +107,7 @@ public class Detail extends AppCompatActivity {
         add.enqueue(new Callback<BookingResponse>() {
             @Override
             public void onResponse(Call<BookingResponse> call, Response<BookingResponse> response) {
-                Toast.makeText(Detail.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Detail.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 //progressDialog.dismiss();
                 onBackPressed();
             }

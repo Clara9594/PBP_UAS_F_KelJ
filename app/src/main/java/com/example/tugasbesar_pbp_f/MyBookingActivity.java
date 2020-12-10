@@ -66,9 +66,14 @@ public class MyBookingActivity extends AppCompatActivity {
         call.enqueue(new Callback<BookingResponse>() {
             @Override
             public void onResponse(Call<BookingResponse> call, Response<BookingResponse> response) {
-                generateDataList(response.body().getBookings());
-                Toast.makeText(MyBookingActivity.this, "BISA CUK", Toast.LENGTH_SHORT).show();
-                swipeRefreshLayout.setRefreshing(false);
+                if(response.body()==null){
+                    Toast.makeText(MyBookingActivity.this,"Anda Belum Melakukan Pemesanan",Toast.LENGTH_SHORT).show();
+                    swipeRefreshLayout.setRefreshing(false);
+                }else{
+                    generateDataList(response.body().getBookings());
+                    Toast.makeText(MyBookingActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    swipeRefreshLayout.setRefreshing(false);
+                }
             }
 
             @Override

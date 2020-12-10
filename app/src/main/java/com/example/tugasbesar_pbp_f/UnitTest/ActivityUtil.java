@@ -13,6 +13,7 @@ public class ActivityUtil {
     public ActivityUtil(Context context) {
         this.context = context;
     }
+
     public void startAdminActivity() {
         context.startActivity(new Intent(context, MainActivity.class));
     }

@@ -74,6 +74,7 @@ public class SignUp extends AppCompatActivity implements SignUpView{
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                presenter.onLoginClicked();
                 String mail = String.valueOf(email.getText());
                 String pass = String.valueOf(password.getText());
                 String nama = String.valueOf(name.getText());
@@ -91,11 +92,11 @@ public class SignUp extends AppCompatActivity implements SignUpView{
                     Toast.makeText(SignUp.this, "Email Invalid!", Toast.LENGTH_SHORT).show();
                 } else if (nama.isEmpty()) {
                     Toast.makeText(SignUp.this, "Please Enter Your Name!", Toast.LENGTH_SHORT).show();
-                } else if (telp.length() < 12) {
+                }
+                else if (telp.length() < 12) {
                     Toast.makeText(SignUp.this, "Phone too short!", Toast.LENGTH_SHORT).show();
-                } else if (telp.isEmpty()) {
-                    Toast.makeText(SignUp.this, "Please Enter Telp", Toast.LENGTH_SHORT).show();
-                } else if (negara.isEmpty()) {
+                }
+                else if (negara.isEmpty()) {
                     Toast.makeText(SignUp.this, "Please Enter Country!", Toast.LENGTH_SHORT).show();
                 } else {
                    progressDialog.show();
@@ -174,11 +175,6 @@ public class SignUp extends AppCompatActivity implements SignUpView{
     @Override
     public void showPasswordError(String message) {
         password.setError(message);
-    }
-
-    @Override
-    public void showPhoneError(String message) {
-       phone.setError(message);
     }
 
     @Override

@@ -19,7 +19,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
@@ -36,7 +35,7 @@ import static org.hamcrest.Matchers.is;
 public class AddCarTesting {
 
     @Rule
-    public ActivityTestRule<SplashActivity> mActivityTestRule = new ActivityTestRule<>(SplashActivity.class);
+    public ActivityTestRule<AddCar> mActivityTestRule = new ActivityTestRule<>(AddCar.class);
 
     @Rule
     public GrantPermissionRule mGrantPermissionRule =
@@ -51,19 +50,19 @@ public class AddCarTesting {
 //                                childAtPosition(
 //                                        withId(R.id.textView4),
 //                                        0),
-//                                1),
+//                                0),
 //                        isDisplayed()));
 //        textInputEditText.perform(replaceText("admin.cardido@cardido.masuk.web.id"), closeSoftKeyboard());
-
-        ViewInteraction textInputEditText2 = onView(
-                allOf(withId(R.id.passwordInput),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.textView5),
-                                        0),
-                                1),
-                        isDisplayed()));
-        textInputEditText2.perform(replaceText("pbpsemangat"), closeSoftKeyboard());
+//
+//        ViewInteraction textInputEditText2 = onView(
+//                allOf(withId(R.id.passwordInput),
+//                        childAtPosition(
+//                                childAtPosition(
+//                                        withId(R.id.textView5),
+//                                        0),
+//                                0),
+//                        isDisplayed()));
+//        textInputEditText2.perform(replaceText("pbpsemangat"), closeSoftKeyboard());
 //
 //        ViewInteraction materialButton = onView(
 //                allOf(withId(R.id.btnLogin), withText("Login"),
@@ -74,24 +73,24 @@ public class AddCarTesting {
 //                                6),
 //                        isDisplayed()));
 //        materialButton.perform(click());
-//
+
 //        ViewInteraction cardView = onView(
 //                allOf(withId(R.id.cvAddUser),
 //                        childAtPosition(
 //                                childAtPosition(
 //                                        withClassName(is("android.widget.ScrollView")),
 //                                        0),
-//                                0)));
+//                                2)));
 //        cardView.perform(scrollTo(), click());
 
-//        ViewInteraction materialButton2 = onView(
-//                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withClassName(is("android.widget.ScrollView")),
-//                                        0),
-//                                8)));
-//        materialButton2.perform(scrollTo(), click());
+        ViewInteraction materialButton2 = onView(
+                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                8)));
+        materialButton2.perform(scrollTo(), click());
 
         ViewInteraction textInputEditText3 = onView(
                 allOf(withId(R.id.inCarName),
@@ -99,17 +98,17 @@ public class AddCarTesting {
                                 childAtPosition(
                                         withId(R.id.layoutCName),
                                         0),
-                                2)));
-        textInputEditText3.perform(scrollTo(), replaceText("Hondaku"), closeSoftKeyboard());
+                                1)));
+        textInputEditText3.perform(scrollTo(), replaceText("Honda "), closeSoftKeyboard());
 
-//        ViewInteraction materialButton3 = onView(
-//                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withClassName(is("android.widget.ScrollView")),
-//                                        0),
-//                                8)));
-//        materialButton3.perform(scrollTo(), click());
+        ViewInteraction materialButton3 = onView(
+                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                8)));
+        materialButton3.perform(scrollTo(), click());
 
         ViewInteraction textInputEditText4 = onView(
                 allOf(withId(R.id.inCarType),
@@ -118,16 +117,16 @@ public class AddCarTesting {
                                         withId(R.id.layoutCType),
                                         0),
                                 1)));
-        textInputEditText4.perform(scrollTo(), replaceText("suv"), closeSoftKeyboard());
+        textInputEditText4.perform(scrollTo(), replaceText("SUV"), closeSoftKeyboard());
 
-//        ViewInteraction materialButton4 = onView(
-//                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withClassName(is("android.widget.ScrollView")),
-//                                        0),
-//                                8)));
-//        materialButton4.perform(scrollTo(), click());
+        ViewInteraction materialButton4 = onView(
+                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                8)));
+        materialButton4.perform(scrollTo(), click());
 
         ViewInteraction textInputEditText5 = onView(
                 allOf(withId(R.id.inCarPlat),
@@ -136,16 +135,16 @@ public class AddCarTesting {
                                         withId(R.id.layoutCPlat),
                                         0),
                                 1)));
-        textInputEditText5.perform(scrollTo(), replaceText("B1265CC"), closeSoftKeyboard());
+        textInputEditText5.perform(scrollTo(), replaceText("B9999KM"), closeSoftKeyboard());
 
-//        ViewInteraction materialButton5 = onView(
-//                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withClassName(is("android.widget.ScrollView")),
-//                                        0),
-//                                8)));
-//        materialButton5.perform(scrollTo(), click());
+        ViewInteraction materialButton5 = onView(
+                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                8)));
+        materialButton5.perform(scrollTo(), click());
 
         ViewInteraction textInputEditText6 = onView(
                 allOf(withId(R.id.inPassanger),
@@ -157,14 +156,14 @@ public class AddCarTesting {
                         isDisplayed()));
         textInputEditText6.perform(replaceText("5"), closeSoftKeyboard());
 
-//        ViewInteraction materialButton6 = onView(
-//                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withClassName(is("android.widget.ScrollView")),
-//                                        0),
-//                                8)));
-//        materialButton6.perform(scrollTo(), click());
+        ViewInteraction materialButton6 = onView(
+                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                8)));
+        materialButton6.perform(scrollTo(), click());
 
         ViewInteraction textInputEditText7 = onView(
                 allOf(withId(R.id.inBags),
@@ -176,6 +175,15 @@ public class AddCarTesting {
                         isDisplayed()));
         textInputEditText7.perform(replaceText("5"), closeSoftKeyboard());
 
+        ViewInteraction materialButton7 = onView(
+                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                8)));
+        materialButton7.perform(scrollTo(), click());
+
         ViewInteraction textInputEditText8 = onView(
                 allOf(withId(R.id.inFuel),
                         childAtPosition(
@@ -183,16 +191,16 @@ public class AddCarTesting {
                                         withId(R.id.layoutFuel),
                                         0),
                                 1)));
-        textInputEditText8.perform(scrollTo(), replaceText("full"), closeSoftKeyboard());
+        textInputEditText8.perform(scrollTo(), replaceText("Full to full"), closeSoftKeyboard());
 
-//        ViewInteraction materialButton7 = onView(
-//                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withClassName(is("android.widget.ScrollView")),
-//                                        0),
-//                                8)));
-//        materialButton7.perform(scrollTo(), click());
+        ViewInteraction materialButton8 = onView(
+                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                8)));
+        materialButton8.perform(scrollTo(), click());
 
         ViewInteraction textInputEditText9 = onView(
                 allOf(withId(R.id.inTotal),
@@ -201,34 +209,34 @@ public class AddCarTesting {
                                         withId(R.id.layoutTotal),
                                         0),
                                 1)));
-        textInputEditText9.perform(scrollTo(), replaceText("50000"), closeSoftKeyboard());
+        textInputEditText9.perform(scrollTo(), replaceText("125000"), closeSoftKeyboard());
 
-//        ViewInteraction materialButton8 = onView(
-//                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withClassName(is("android.widget.ScrollView")),
-//                                        0),
-//                                8)));
-//        materialButton8.perform(scrollTo(), click());
+        ViewInteraction materialButton9 = onView(
+                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                8)));
+        materialButton9.perform(scrollTo(), click());
 
-//        ViewInteraction materialButton9 = onView(
+//        ViewInteraction materialButton10 = onView(
 //                allOf(withId(R.id.btnGaleri), withText("OPEN GALERY"),
 //                        childAtPosition(
 //                                childAtPosition(
 //                                        withClassName(is("android.widget.ScrollView")),
 //                                        0),
-//                                9)));
-//        materialButton9.perform(scrollTo(), click());
-
-//        ViewInteraction materialButton10 = onView(
-//                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
-//                        childAtPosition(
-//                                childAtPosition(
-//                                        withClassName(is("android.widget.ScrollView")),
-//                                        0),
-//                                8)));
+//                                7)));
 //        materialButton10.perform(scrollTo(), click());
+
+        ViewInteraction materialButton11 = onView(
+                allOf(withId(R.id.btnSaveCar), withText("Add to List"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                8)));
+        materialButton11.perform(scrollTo(), click());
     }
 
     private static Matcher<View> childAtPosition(

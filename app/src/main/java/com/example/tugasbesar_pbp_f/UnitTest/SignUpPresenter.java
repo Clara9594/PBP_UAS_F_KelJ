@@ -12,6 +12,7 @@ public class SignUpPresenter {
         this.view = view;
         this.service = service;
     }
+
     public void onLoginClicked() {
         String pattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         if (view.getName().isEmpty()) {
@@ -26,20 +27,17 @@ public class SignUpPresenter {
         } else if (view.getPassword().length() < 8) {
             view.showPasswordError("Password too short!");
             return;
-        } else if (view.getEmail().matches(pattern)) {
+        } else if (!(view.getEmail().matches(pattern))) {
             view.showEmailInvalid("Email Invalid!");
             return;
         } else if (view.getPhone().length() < 12) {
             view.showPhoneLess("Phone too short!");
             return;
-        } else if (view.getPhone().isEmpty()) {
-            view.showPhoneError("Please Enter Telp");
-            return;
-        } else if (view.getCountry().isEmpty()) {
+        }else if (view.getCountry().isEmpty()) {
             view.showCountryError("Please Enter Country!");
             return;
         }else {
-            service.login(view, view.getEmail(), view.getPassword(), view.getPhone(), view.getCountry(), view.getName(),
+            service.login(view, view.getName(),view.getPhone(),view.getEmail(), view.getPassword(),  view.getCountry(),
                     new SignUpCallback() {
                         @Override
                         public void onSuccess(boolean value, UserDAO user) {

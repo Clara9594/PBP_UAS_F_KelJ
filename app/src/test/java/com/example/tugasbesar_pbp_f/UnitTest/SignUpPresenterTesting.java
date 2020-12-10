@@ -6,18 +6,15 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-
-public class SignUpPresenterTest {
+public class SignUpPresenterTesting {
     @Mock
     private SignUpView view;
     @Mock
     private SignUpService service;
-    @Mock
     private SignUpPresenter presenter;
 
     @Before
@@ -86,14 +83,14 @@ public class SignUpPresenterTest {
         when(view.getPassword()).thenReturn("clara123");
         System.out.println("Password : " + view.getPassword());
 
-        when(view.getEmail()).thenReturn("dillaarista");
+        when(view.getEmail()).thenReturn("dilla.com");
         System.out.println("Email : " + view.getEmail());
         presenter.onLoginClicked();
         verify(view).showEmailInvalid("Email Invalid!");
     }
 
     @Test
-    public void shouldShowErrorMessageWhenPhoneIsEmpty()
+    public void shouldShowErrorMessageWhenPhoneIsLess()
             throws Exception {
 
         when(view.getName()).thenReturn("Clara");
@@ -106,24 +103,6 @@ public class SignUpPresenterTest {
         System.out.println("Email : " + view.getEmail());
 
         when(view.getPhone()).thenReturn("");
-        System.out.println("Phone : " + view.getPhone());
-        presenter.onLoginClicked();
-        verify(view).showPhoneError("Please Enter Telp");
-    }
-
-    @Test
-    public void shouldShowErrorMessageWhenPhoneIsLess()
-            throws Exception {
-        when(view.getName()).thenReturn("Clara");
-        System.out.println("name : " + view.getName());
-
-        when(view.getPassword()).thenReturn("123");
-        System.out.println("Password : " + view.getPassword());
-
-        when(view.getEmail()).thenReturn("dillaarista33@gmail.com");
-        System.out.println("Email : " + view.getEmail());
-
-        when(view.getPhone()).thenReturn("0812465");
         System.out.println("Phone : " + view.getPhone());
         presenter.onLoginClicked();
         verify(view).showPhoneLess("Phone too short!");

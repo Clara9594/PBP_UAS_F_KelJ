@@ -8,12 +8,6 @@
     android:orientation="vertical"
     android:background="@color/background">
 
-    //      'name' => 'required|max:60',
-    //              'phone' => 'required|numeric|regex:/^(08)[0-9]{8,11}$/',
-    //              'email' => 'required|email:rfc,dns|unique:users',
-    //              'password' => 'required',
-    //              'country' => 'required|max:60'
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
         android:layout_width="match_parent"
