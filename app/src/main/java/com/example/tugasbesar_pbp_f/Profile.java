@@ -51,7 +51,7 @@ public class Profile extends AppCompatActivity {
         btnUpload = findViewById(R.id.btnUpload);
         loadUserById(idUser);
 
-        ibBack = findViewById(R.id.btnBack);
+        ibBack = findViewById(R.id.btnBackProfile);
         ibBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

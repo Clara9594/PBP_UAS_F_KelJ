@@ -236,7 +236,7 @@
                             android:text="@string/cars_pic"
                             android:textColor="@color/black"/>
 
-                        <ImageView
+                        <com.github.siyamed.shapeimageview.RoundedImageView
                             android:id="@+id/image_car"
                             android:layout_width="75dp"
                             android:layout_height="50dp"

@@ -14,19 +14,20 @@
         android:focusable="true">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="110dp"
             app:backgroundTint="#ffffff">
-            <com.github.siyamed.shapeimageview.CircularImageView
+
+            <com.github.siyamed.shapeimageview.RoundedImageView
                 android:id="@+id/image_car"
-                android:layout_width="70dp"
+                android:layout_width="110dp"
                 android:layout_height="70dp"
-                android:layout_marginStart="292dp"
+                android:layout_marginStart="248dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.615" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/brand_car"
@@ -47,7 +48,7 @@
                 android:id="@+id/name_car"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:fontFamily="@font/mregular"
                 android:maxLines="3"
                 android:textSize="15sp"

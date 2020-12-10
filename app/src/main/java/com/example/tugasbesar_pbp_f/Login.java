@@ -120,7 +120,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 if(response.body()!=null){
-                    Toast.makeText(Login.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Login Success!", Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                         if (response.body().getMessage().equals("admin")){
                             Intent i = new Intent(Login.this, AdminActivity.class);

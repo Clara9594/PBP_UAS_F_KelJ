@@ -80,9 +80,10 @@
                             android:layout_marginEnd="-1dp"
                             android:layout_toEndOf="@+id/tvId"
                             android:hint="@string/id"
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"
                             android:textAlignment="textEnd"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:textColor="@color/black" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -108,9 +109,10 @@
                             android:layout_marginEnd="-1dp"
                             android:layout_toEndOf="@+id/tvName"
                             android:hint="@string/bName"
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"
                             android:textAlignment="textEnd"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:textColor="@color/black" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -136,9 +138,11 @@
                             android:layout_marginEnd="-1dp"
                             android:layout_toEndOf="@+id/tvPickUp"
                             android:hint="@string/pick_up_location"
+                            android:maxLines="3"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -194,7 +198,8 @@
                             android:hint="@string/tBooking"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -221,7 +226,8 @@
                             android:hint="@string/cName"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -275,7 +281,8 @@
                             android:hint="@string/driver_age"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -302,42 +309,12 @@
                             android:hint="@string/cPrice"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@color/white"
-            android:padding="20dp">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnDelete"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/buttonSignUp"
-                android:text="@string/btnDelete"
-                android:textColor="@color/white" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnEdit"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:backgroundTint="@color/buttonSignIn"
-                android:text="@string/btnEdit"
-                android:textColor="@color/white" />
-        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>

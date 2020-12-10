@@ -82,7 +82,8 @@
                             android:hint="@string/id"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -110,7 +111,8 @@
                             android:hint="@string/bName"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -136,9 +138,12 @@
                             android:layout_marginEnd="-1dp"
                             android:layout_toEndOf="@+id/tvPickUp"
                             android:hint="@string/pick_up_location"
+                            android:maxLength="500"
+                            android:maxLines="3"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -166,7 +171,8 @@
                             android:hint="@string/dBooking"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -194,7 +200,8 @@
                             android:hint="@string/tBooking"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -221,7 +228,8 @@
                             android:hint="@string/cName"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp" />
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -275,7 +283,8 @@
                             android:hint="@string/driver_age"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -302,7 +311,8 @@
                             android:hint="@string/cPrice"
                             android:textAlignment="textEnd"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:fontFamily="@font/mmedium"
+                            android:textSize="18dp"/>
                     </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>

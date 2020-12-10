@@ -34,10 +34,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="50dp"
-        android:text="@string/judul"
         android:fontFamily="@font/mbold"
+        android:text="@string/judul"
         android:textColor="@color/textColor"
         android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,15 +58,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <ImageView
+    <com.github.siyamed.shapeimageview.CircularImageView
         android:id="@+id/profile"
-        android:layout_width="84dp"
-        android:layout_height="116dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:src="@drawable/profil"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -75,7 +76,7 @@
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/edit_text_radius"
         android:fontFamily="@font/mregular"
@@ -84,12 +85,12 @@
         android:textSize="17dp"
         app:backgroundTint="@color/buttonSignIn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile" />
 
     <ImageButton
-        android:id="@+id/btnBack"
+        android:id="@+id/btnBackProfile"
         android:layout_width="55dp"
         android:layout_height="48dp"
         android:layout_marginStart="5dp"
@@ -99,12 +100,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tfName"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/edit_text_radius"
@@ -118,12 +118,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inName"
             android:layout_width="350dp"
-            android:layout_height="52dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="-10dp"
-            android:layout_marginTop="-10dp"
+            android:layout_marginTop="-8dp"
             android:autofillHints=""
             android:backgroundTint="@android:color/white"
-            android:hint="@string/nameD"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="15dp" />
@@ -133,9 +132,9 @@
         android:id="@+id/tfPhone"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/edit_text_radius"
         android:fontFamily="@font/mregular"
         android:padding="10dp"
@@ -147,26 +146,24 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inPhone"
             android:layout_width="350dp"
-            android:layout_height="52dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="-10dp"
-            android:layout_marginTop="-10dp"
+            android:layout_marginTop="-8dp"
             android:autofillHints=""
             android:backgroundTint="@android:color/white"
-            android:hint="@string/phoneD"
             android:inputType="number"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="15dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tfCountry"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="350dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/edit_text_radius"
         android:fontFamily="@font/mregular"
         android:padding="10dp"
@@ -178,12 +175,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inCountry"
             android:layout_width="350dp"
-            android:layout_height="52dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="-10dp"
-            android:layout_marginTop="-10dp"
+            android:layout_marginTop="-8dp"
             android:autofillHints=""
             android:backgroundTint="@android:color/white"
-            android:hint="@string/countryD"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textSize="15dp" />
@@ -194,7 +190,7 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/edit_text_radius"
         android:fontFamily="@font/mregular"

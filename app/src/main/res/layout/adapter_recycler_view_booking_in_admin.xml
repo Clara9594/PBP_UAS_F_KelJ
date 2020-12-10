@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -19,15 +18,15 @@
         android:layout_height="150dp">
 
         <com.google.android.material.textview.MaterialTextView
-            style="@style/TextAppearance.MaterialComponents.Headline6"
             android:id="@+id/twBookingDate1"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/mbold"
             android:maxLines="1"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:maxLines="3"
-            android:textSize="18sp"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="@+id/twBookingDate1"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/twBookingDate1"
@@ -50,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:maxLines="3"
-            android:textSize="18sp"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="@+id/twPickupTime"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/twPickupTime"
@@ -66,7 +65,7 @@
             android:fontFamily="@font/mbold"
             android:layout_marginBottom="10dp"
             android:maxLines="1"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/twDropOffTime"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/twDropOffTime"
@@ -80,19 +79,36 @@
             android:fontFamily="@font/mbold"
             android:layout_marginRight="20dp"
             android:maxLines="1"
+            android:layout_marginTop="23dp"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/twBookingDate1"
             tools:ignore="SmallSp" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/twTotalPrice"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/twRp"
+            android:layout_width="39dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="4dp"
             android:maxLines="3"
-            android:textSize="20sp"
+            android:text="@string/rp"
+            android:textSize="15sp"
+            app:fontFamily="@font/mregular"
             app:layout_constraintEnd_toEndOf="@+id/twCarName"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="@+id/twCarName"
+            app:layout_constraintTop_toBottomOf="@+id/twCarName"
+            tools:ignore="SmallSp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/twTotalPrice"
+            android:layout_width="106dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="4dp"
+            android:maxLines="3"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/twCarName"
+            app:layout_constraintHorizontal_bias="0.636"
             app:layout_constraintStart_toStartOf="@+id/twCarName"
             app:layout_constraintTop_toBottomOf="@+id/twCarName"
             tools:ignore="SmallSp" />

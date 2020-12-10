@@ -16,9 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             app:backgroundTint="#ffffff">
-            <com.github.siyamed.shapeimageview.CircularImageView
+            <com.github.siyamed.shapeimageview.RoundedImageView
                 android:id="@+id/image_car"
-                android:layout_width="70dp"
+                android:layout_width="110dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="550dp"
                 android:layout_marginTop="12dp"

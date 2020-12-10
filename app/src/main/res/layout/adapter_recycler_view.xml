@@ -19,7 +19,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="210dp">
+            android:layout_height="220dp">
 
             <ImageView
                 android:id="@+id/image_car"
@@ -49,9 +49,10 @@
                 android:id="@+id/brand_car"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="2dp"
                 android:maxLines="3"
                 android:textSize="18sp"
+                app:fontFamily="@font/mmedium"
                 app:layout_constraintEnd_toEndOf="@+id/name_car"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/name_car"
@@ -62,32 +63,39 @@
                 android:id="@+id/passenger"
                 android:layout_width="53dp"
                 android:layout_height="32dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:maxLines="3"
-                android:textSize="18sp"
+                android:textSize="15sp"
+
+                android:fontFamily="@font/mregular"
                 app:layout_constraintEnd_toEndOf="@+id/brand_car"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.123"
                 app:layout_constraintStart_toStartOf="@+id/brand_car"
                 app:layout_constraintTop_toBottomOf="@+id/brand_car"
                 tools:ignore="SmallSp" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/materialTextView8"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="92dp"
                 android:fontFamily="@font/mregular"
                 android:text="@string/passanger"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="@+id/passenger"
-                app:layout_constraintStart_toEndOf="@+id/passenger"
-                app:layout_constraintTop_toTopOf="@+id/passenger" />
+                android:layout_marginTop="6dp"
+                app:layout_constraintBottom_toTopOf="@+id/bag"
+                app:layout_constraintEnd_toStartOf="@+id/image_car"
+                app:layout_constraintTop_toBottomOf="@+id/brand_car"
+                app:layout_constraintVertical_bias="0.166" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/bag"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:maxLines="3"
-                android:textSize="18sp"
+                android:textSize="15sp"
+                android:fontFamily="@font/mregular"
                 app:layout_constraintEnd_toEndOf="@+id/passenger"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/passenger"
@@ -98,21 +106,22 @@
                 android:id="@+id/materialTextView6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="140dp"
                 android:fontFamily="@font/mregular"
                 android:text="@string/bags"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="@+id/bag"
-                app:layout_constraintStart_toEndOf="@+id/bag"
-                app:layout_constraintTop_toTopOf="@+id/bag" />
+                app:layout_constraintEnd_toStartOf="@+id/image_car"
+                app:layout_constraintTop_toBottomOf="@+id/brand_car" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/fuel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="10dp"
                 android:maxLines="3"
-
                 android:textSize="18sp"
+                app:fontFamily="@font/mmedium"
                 app:layout_constraintEnd_toEndOf="@+id/brand_car"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/brand_car"
@@ -126,6 +135,7 @@
                 android:layout_marginTop="4dp"
                 android:maxLines="3"
                 android:textSize="18sp"
+                app:fontFamily="@font/mmedium"
                 app:layout_constraintEnd_toEndOf="@+id/brand_car"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/brand_car"
@@ -133,13 +143,28 @@
                 tools:ignore="SmallSp" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/price"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:id="@+id/rp"
+                android:layout_width="46dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="4dp"
                 android:maxLines="3"
-                android:textSize="20sp"
+                android:text="@string/rp"
                 android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/image_car"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_car"
+                app:layout_constraintTop_toBottomOf="@+id/image_car"
+                tools:ignore="SmallSp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/price"
+                android:layout_width="86dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="4dp"
+                android:maxLines="3"
+                android:textAlignment="center"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/image_car"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/image_car"

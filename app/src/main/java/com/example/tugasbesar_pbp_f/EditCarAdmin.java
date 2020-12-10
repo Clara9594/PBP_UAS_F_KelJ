@@ -158,7 +158,7 @@ public class EditCarAdmin extends AppCompatActivity {
         update.enqueue(new Callback<CarResponse>(){
             @Override
             public void onResponse(retrofit2.Call<CarResponse> call, Response<CarResponse> response) {
-                Toast.makeText(EditCarAdmin.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(EditCarAdmin.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 Intent next = new Intent(EditCarAdmin.this, ShowListCarAdmin.class);
                 startActivity(next);
                // progressDialog.dismiss();

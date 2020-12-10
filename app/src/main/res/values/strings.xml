@@ -116,7 +116,7 @@
     <string name="total">Total :</string>
     <string name="price">Rental Price :</string>
     <string name="number">Number Of Days :</string>
-    <string name="rp">Rp</string>
+    <string name="rp">Rp.</string>
 
     <!--    ini recycler-->
     <string name="passanger">Passengers</string>
@@ -150,7 +150,7 @@
     <string name="cars_name">Car`s Name</string>
     <string name="cars_type">Car`s Type</string>
     <string name="cars_plate">Car`s License Plate</string>
-    <string name="cars_pic">Cas`s Picture</string>
+    <string name="cars_pic">Car`s Picture</string>
     <string name="priceInDetail">Price</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>

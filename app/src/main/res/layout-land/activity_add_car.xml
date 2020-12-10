@@ -236,6 +236,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSaveCar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/addList"
+        android:textColor="@color/white"
+        app:backgroundTint="#212b66"
+        app:layout_constraintTop_toBottomOf="@id/layoutTotal" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGaleri"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -245,15 +255,7 @@
         app:background="@color/buttonSignUp"
         android:text="@string/select"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSaveCar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="@string/addList"
-        android:textColor="@color/white"
-        app:backgroundTint="#212b66"
-        app:layout_constraintTop_toBottomOf="@id/layoutTotal" />
+
     </LinearLayout>
     </ScrollView>
 
