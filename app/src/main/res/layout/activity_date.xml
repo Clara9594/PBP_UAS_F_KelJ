@@ -82,6 +82,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/materialTextView2"
         app:layout_constraintTop_toBottomOf="@+id/materialTextView2">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pickDateInput"
             android:layout_width="match_parent"

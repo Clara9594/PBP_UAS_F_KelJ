@@ -17,6 +17,7 @@ import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class AddCar extends AppCompatActivity {
     private String filePath="";
     private Bitmap bitmap;
     private ImageView imageView;
+    private ImageButton btnBack;
     private final int MY_PERMISSION_REQUEST = 777;
 
 
@@ -65,6 +67,15 @@ public class AddCar extends AppCompatActivity {
         btnCreate = findViewById(R.id.btnSaveCar);
         btnUnggah = findViewById(R.id.btnGaleri);
         imageView = findViewById(R.id.imageView4);
+        btnBack = findViewById(R.id.backCar);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent back = new Intent (AddCar.this, AdminActivity.class);
+                startActivity(back);
+            }
+        });
 
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override

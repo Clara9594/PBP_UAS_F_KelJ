@@ -78,7 +78,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvAddUser"
-                    android:layout_width="wrap_content"
+                    android:layout_width="83dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"

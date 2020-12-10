@@ -163,6 +163,11 @@
     <string name="showOrderList">Show Order List</string>
     <string name="btnLogout">Logout</string>
     <string name="title_activity_show_order_list_admin">ShowOrderListAdmin</string>
+
+    <!--    ini buat add car-->
+    <string name="addList">Add to List</string>
+    <string name="select">Choose Photo</string>
+
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.

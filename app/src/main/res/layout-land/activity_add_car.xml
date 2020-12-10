@@ -85,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/cars_name"
-            android:textColor="@color/black"/>
+            android:textColorHint="@color/hintText"/>
         </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/cars_type"
-            android:textColor="@color/black"/>
+            android:textColorHint="@color/hintText"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/cars_plate"
-            android:textColor="@color/black"/>
+            android:textColorHint="@color/hintText"/>
 
     </com.google.android.material.textfield.TextInputLayout>
     <LinearLayout
@@ -149,7 +149,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutPassger"
-            android:layout_width="160dp"
+            android:layout_width="320dp"
             android:layout_height="match_parent"
             app:boxStrokeColor="@color/black"
             android:textColorHint="#505050"
@@ -159,16 +159,16 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inPassanger"
-                android:layout_width="160dp"
+                android:layout_width="320dp"
                 android:layout_height="match_parent"
                 android:hint="@string/passanger"
                 android:inputType="numberSigned"
-                android:textColor="@color/black"/>
+                android:textColorHint="@color/hintText"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutBags"
-            android:layout_width="160dp"
+            android:layout_width="320dp"
             android:layout_height="match_parent"
             android:textColorHint="#505050"
             app:boxStrokeColor="@color/black"
@@ -177,11 +177,11 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inBags"
-                android:layout_width="160dp"
+                android:layout_width="320dp"
                 android:layout_height="match_parent"
                 android:hint="@string/bags"
                 android:inputType="numberSigned"
-                android:textColor="@color/black"/>
+                android:textColorHint="@color/hintText"/>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
@@ -206,7 +206,7 @@
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/fuel"
-            android:textColor="@color/black"/>
+            android:textColorHint="@color/hintText"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -231,20 +231,9 @@
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="Total"
-            android:textColor="@color/black"/>
+            android:textColorHint="@color/hintText"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSaveCar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="@string/addList"
-        android:textColor="@color/white"
-        app:backgroundTint="#212b66"
-        app:layout_constraintTop_toBottomOf="@id/layoutTotal" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGaleri"
@@ -255,6 +244,16 @@
         app:layout_constraintTop_toBottomOf="@id/btnSaveCar"
         app:background="@color/buttonSignUp"
         android:text="@string/select"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSaveCar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/addList"
+        android:textColor="@color/white"
+        app:backgroundTint="#212b66"
+        app:layout_constraintTop_toBottomOf="@id/layoutTotal" />
     </LinearLayout>
     </ScrollView>
 

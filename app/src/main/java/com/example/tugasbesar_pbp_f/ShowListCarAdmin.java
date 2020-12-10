@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,13 +24,25 @@ public class ShowListCarAdmin extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ShowListCarAdminAdapter adapter;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private ImageButton btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_list_car_admin);
         swipeRefreshLayout = findViewById(R.id.swipeRefresh);
+        btnBack = findViewById(R.id.bckDate);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent kembali = new Intent(ShowListCarAdmin.this, AdminActivity.class);
+                startActivity(kembali);
+            }
+        });
+
         swipeRefreshLayout.setRefreshing(true);
         loadCar();
+
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

@@ -9,6 +9,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -71,7 +72,7 @@ public class EditCarAdmin extends AppCompatActivity {
         tas = findViewById(R.id.etBag);
         bensin = findViewById(R.id.etFuel);
         harga = findViewById(R.id.edPrice);
-        btnback = findViewById(R.id.ibBack);
+        btnback = findViewById(R.id.ibBackAdmin);
         btnEdit = findViewById(R.id.btnEdit);
         btnUpload = findViewById(R.id.btnUpload);
         imageView = findViewById(R.id.imageView4);
@@ -93,6 +94,7 @@ public class EditCarAdmin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 updateCar();
+
 //                Toast.makeText(EditCarAdmin.this, idCar, Toast.LENGTH_SHORT).show();
             }
         });
@@ -157,6 +159,8 @@ public class EditCarAdmin extends AppCompatActivity {
             @Override
             public void onResponse(retrofit2.Call<CarResponse> call, Response<CarResponse> response) {
                 Toast.makeText(EditCarAdmin.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                Intent next = new Intent(EditCarAdmin.this, ShowListCarAdmin.class);
+                startActivity(next);
                // progressDialog.dismiss();
             }
 
