@@ -60,8 +60,8 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/passenger"
-                android:layout_width="46dp"
-                android:layout_height="27dp"
+                android:layout_width="53dp"
+                android:layout_height="32dp"
                 android:layout_marginTop="4dp"
                 android:maxLines="3"
                 android:textSize="18sp"
@@ -113,9 +113,9 @@
                 android:maxLines="3"
 
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/bag"
+                app:layout_constraintEnd_toEndOf="@+id/brand_car"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/bag"
+                app:layout_constraintStart_toStartOf="@+id/brand_car"
                 app:layout_constraintTop_toBottomOf="@+id/bag"
                 tools:ignore="SmallSp" />
 
@@ -126,9 +126,9 @@
                 android:layout_marginTop="4dp"
                 android:maxLines="3"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/fuel"
+                app:layout_constraintEnd_toEndOf="@+id/brand_car"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/fuel"
+                app:layout_constraintStart_toStartOf="@+id/brand_car"
                 app:layout_constraintTop_toBottomOf="@+id/fuel"
                 tools:ignore="SmallSp" />
 
